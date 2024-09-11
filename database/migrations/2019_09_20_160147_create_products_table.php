@@ -20,20 +20,22 @@ class CreateProductsTable extends Migration
 
             //$table->string('category_id')->nullable();
             $table->unsignedBigInteger('brand_id')->nullable();
-
+            $table->integer('views')->default(0);
             $table->string('poster')->nullable();
             $table->string('poster_thumb')->nullable();
             $table->text('color_id')->nullable();
-
+            $table->integer('count')->default(0);
+            $table->boolean('available')->default(true);
             $table->jsonb('sizes')->nullable();
-
-//            $table->jsonb('characteristics')->nul lable();
-
+            $table->float('price_credit')->default(0);
+            //            $table->jsonb('characteristics')->nul lable();
+            $table->jsonb('descriptions')->default('{"ru":"","uz":""}');
+            $table->jsonb('keywords')->default('{"ru":"","uz":""}');
             $table->string('slug')->nullable();
             $table->boolean('published')->default(false);
             $table->unsignedBigInteger('child_id')->nullable();
             $table->string('currency')->default('sum');
-
+            $table->jsonb('title_seo')->default('{"ru":"","uz":""}');
             $table->boolean('popular')->default(false);
             $table->boolean('leader_of_sales')->default(false);
 
@@ -44,7 +46,7 @@ class CreateProductsTable extends Migration
 
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->foreign('child_id')->references('id')->on('products');
-//            $table->foreign('category_id')->references('id')->on('categories');
+            //            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

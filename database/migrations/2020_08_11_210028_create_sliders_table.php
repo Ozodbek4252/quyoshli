@@ -19,6 +19,8 @@ class CreateSlidersTable extends Migration
             $table->string('image');
             $table->string('language', 10)->default('ru');
             $table->string('link');
+            $table->unsignedInteger('position')->default(0);
+            $table->boolean('published')->default(true);
             $table->enum('type', ['desktop', 'mobile'])->default('desktop');
             $table->enum('placement', ['top', 'middle'])->default('top');
             $table->timestamps();

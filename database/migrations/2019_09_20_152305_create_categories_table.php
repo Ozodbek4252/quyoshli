@@ -17,11 +17,13 @@ class CreateCategoriesTable extends Migration
 
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->unsignedInteger('position')->default(0);
-
+            $table->boolean('credit')->default(true);
             $table->boolean('popular')->default(false);
-
+            $table->jsonb('title_seo')->default('{"ru":"","uz":""}');
+            $table->jsonb('descriptions')->default('{"ru":"","uz":""}');
+            $table->jsonb('keywords')->default('{"ru":"","uz":""}');
+            $table->boolean('published')->default(true);
             $table->timestamps();
-
             $table->foreign('parent_id')
                 ->references('id')
                 ->on('categories')

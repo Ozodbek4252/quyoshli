@@ -22,6 +22,8 @@ class CreatePostsTable extends Migration
             $table->boolean('topped')->default(false);
             $table->string('image');
             $table->enum('type', ['news', 'article', 'sales', 'media']);
+            $table->text('keywords')->nullable();
+            $table->text('descriptions')->nullable();
             $table->unsignedInteger('views')->default(0);
             $table->timestamps();
         });

@@ -20,7 +20,7 @@ class CreateBillingsTable extends Migration
             $table->enum('status', ['payed', 'waiting', 'refused'])->default('waiting');
             $table->integer('amount')->default(0);
             $table->string('payment_system')->nullable();
-
+            $table->string('transaction_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

@@ -17,13 +17,13 @@ class CreateOrdersTable extends Migration
             $table->integer('price_delivery')->nullable();
 //            $table->integer('price_product')->nullable();
             $table->integer('discount')->nullable();
-
+            $table->boolean('archived')->default(false);
             $table->timestamp('shipment_date')->nullable();
-
+            $table->enum('type', ['default', 'one_click'])->default('default');
             $table->enum('type_delivery', ['delivery', 'pickup'])->default('delivery');
             $table->jsonb('currency');
             $table->unsignedBigInteger('branch_id')->nullable();
-
+            $table->jsonb('apelsin_data')->nullable();
             $table->enum('status', ['processing', 'collected', 'waiting_buyer', 'in_way', 'closed', 'cancelled', 'replacement', 'completed'])->default('processing');
 
             $table->enum('payment_type', ['cash', 'payme', 'apelsin', 'click', 'uzcard', 'oson', 'credit', 'upay', 'paynet'])->default('cash');

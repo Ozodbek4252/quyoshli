@@ -16,13 +16,13 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
 
             $table->unsignedInteger('role_id')->default(2);
-
+            $table->string('email')->nullable();
             $table->unsignedBigInteger('phone')->unique();
             $table->unsignedInteger('verify_code')->nullable();
-
+            $table->boolean('verified')->default(false);
             $table->boolean('gender')->default(true);
             $table->timestamp('birth_day')->nullable();
-
+            $table->string('postal_address')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->boolean('notification')->default(true);
 

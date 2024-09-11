@@ -16,6 +16,7 @@ class CreateRegionsTable extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->jsonb('name');
+            $table->boolean('cash')->default(false);
             $table->timestamps();
         });
     }

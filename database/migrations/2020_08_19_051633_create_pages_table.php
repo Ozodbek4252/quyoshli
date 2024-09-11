@@ -18,6 +18,8 @@ class CreatePagesTable extends Migration
             $table->jsonb('name');
             $table->string('slug');
             $table->jsonb('body');
+            $table->jsonb('descriptions')->default('{"ru":"","uz":""}');
+            $table->jsonb('keywords')->default('{"ru":"","uz":""}');
             $table->unsignedInteger('type')->nullable();
             $table->timestamps();
         });

@@ -18,7 +18,7 @@ class CreateNotificationAvailablesTable extends Migration
             $table->bigInteger('phone');
             $table->unsignedBigInteger('product_id');
             $table->timestamps();
-
+            $table->integer('sms')->default(2);
             $table->foreign('product_id')
                 ->references('id')->on('products')
                 ->onDelete('cascade');

@@ -48,7 +48,7 @@ class User extends Authenticatable
      */
     public function setPasswordAttribute($password)
     {
-        if ( !empty($password) ) {
+        if (!empty($password)) {
             $this->attributes['password'] = bcrypt($password);
         }
     }
@@ -92,14 +92,14 @@ class User extends Authenticatable
     {
         return (string) $this->ip;
     }
-//
-//    /**
-//     * @return bool
-//     */
-//    public function isAdmin(): bool
-//    {
-//        return $this->role_id == 1;
-//    }
+    //
+    //    /**
+    //     * @return bool
+    //     */
+    //    public function isAdmin(): bool
+    //    {
+    //        return $this->role_id == 1;
+    //    }
 
     /**
      * @return bool
