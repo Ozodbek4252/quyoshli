@@ -1,10 +1,52 @@
 <?php
 
+use App\Http\Controllers\Apelsin\Controller as ApelsinController;
+use App\Http\Controllers\Dashboard\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/sitemap.xml', 'Site\MainPageController@sitemap')->name('sitemap');
+
+Route::get('/payment/apelsin/{billing}', 'Apelsin\Controller@paymentOrder')->name('merchant.apelsin');
+Route::post('/payment/apelsin', 'Apelsin\Controller@payment');
+Route::any('/payment/{paysys}', function ($paysys) {
+    return (new Goodoneuz\PayUz\PayUz)->driver($paysys)->handle();
+});
+
+Route::match(['post', 'get'], 'pay/check/{order}', 'Site\CheckoutController@check')->name('pay_check');
+
+Route::any('/pay/{paysys}/{key}/{amount}', function ($paysys, $key, $amount) {
+    $billing = App\Models\Billing::find($key);
+    $model = Goodoneuz\PayUz\Services\PaymentService::convertKeyToModel($key);
+    $url = route('pay_check', $billing->order_id); //request('redirect_url','/');
+    $pay_uz = new Goodoneuz\PayUz\PayUz;
+    $pay_uz
+        ->driver($paysys)
+        ->redirect($model, $amount, 860, $url);
+})->name('payment.merchant');
+
+Route::namespace('Dashboard')
+    ->group(function () {
+        Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+        Route::post('login', [AuthController::class, 'login'])->name('login');
+        Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    });
+
+Route::group(['prefix' => 'credit/apelsin/handle', 'namespace' => 'Apelsin'], function () {
+    Route::post('confirm', [ApelsinController::class, 'confirm']);
+    Route::post('confirm/status', 'Controller@status');
+
+    //    Route::post('send/test', 'Controller@test');
+    Route::post('comment', 'Controller@comment');
+});
+
+Route::get('/testt/{order}', 'Apelsin\Controller@delivered');
+
+
+
 
 Route::group(['prefix' => '/dashboard', 'namespace' => 'Dashboard', 'middleware' => ['auth:staff', 'blocked']], function () {
     Route::get('/', 'Controller@index')->name('dashboard');
