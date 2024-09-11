@@ -33,16 +33,14 @@ class LoginRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->isMethod('get'))
-        {
-          return [];
+        if ($this->isMethod('get')) {
+            return [];
         }
         return [
-
             'username' => [
                 'required',
                 'string',
             ],
-        ];}
-
+        ];
+    }
 }

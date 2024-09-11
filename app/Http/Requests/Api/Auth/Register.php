@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Api\Auth;
 
-use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
 class Register extends FormRequest

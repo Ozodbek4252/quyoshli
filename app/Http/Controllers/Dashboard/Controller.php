@@ -29,7 +29,7 @@ class Controller extends ExController
             'sum' => $this->getAllSumStatic(),
         ];
 
-//        return $this->getUserStatics();
+        //        return $this->getUserStatics();
 
         return view('dashboard.index', compact('users', 'orders', 'credit', 'products', 'billing', 'statics'));
     }
@@ -69,42 +69,42 @@ class Controller extends ExController
         $archived = DashboardStatic::getCountArchived();
 
         return [
-                'data' => [
-                    [
-                        'name' => 'В обработке',
-                        'values' => $processing
-                    ],
+            'data' => [
+                [
+                    'name' => 'В обработке',
+                    'values' => $processing
+                ],
 
-                    [
-                        'name' => 'Собран',
-                        'values' => $collect
-                    ],
+                [
+                    'name' => 'Собран',
+                    'values' => $collect
+                ],
 
-                    [
-                        'name' => 'Ожидает',
-                        'values' => $waiting
-                    ],
+                [
+                    'name' => 'Ожидает',
+                    'values' => $waiting
+                ],
 
-                    [
-                        'name' => 'Закрыт',
-                        'values' => $closed
-                    ],
+                [
+                    'name' => 'Закрыт',
+                    'values' => $closed
+                ],
 
-                    [
-                        'name' => 'Отменен',
-                        'values' => $cancelled
-                    ],
+                [
+                    'name' => 'Отменен',
+                    'values' => $cancelled
+                ],
 
-                    [
-                        'name' => 'Замена',
-                        'values' => $replacement
-                    ],
+                [
+                    'name' => 'Замена',
+                    'values' => $replacement
+                ],
 
-                    [
-                        'name' => 'Архиве',
-                        'values' => $archived
-                    ],
-                ]
+                [
+                    'name' => 'Архиве',
+                    'values' => $archived
+                ],
+            ]
         ];
     }
 
@@ -182,6 +182,4 @@ class Controller extends ExController
             ]
         ];
     }
-
-
 }

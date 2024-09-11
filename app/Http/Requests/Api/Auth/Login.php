@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Api\Auth;
 
-use App\Rules\Auth\Phone;
 use Illuminate\Foundation\Http\FormRequest;
 
 class Login extends FormRequest

@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
 
 class BlockedStaff
 {
@@ -14,12 +14,11 @@ class BlockedStaff
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        if (auth()->check()) {
-            if (auth()->user()->block == false) {
-                return $next($request);
-            }
+        dd('blocked');
+        if (auth()->check() && auth()->user()->block === false) {
+            return $next($request);
         }
 
         return abort(403, 'Ваш профиль заблокирован');
