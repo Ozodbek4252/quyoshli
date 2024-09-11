@@ -1,0 +1,24 @@
+.section-title {
+  font-size: 36px;
+  font-weight: normal;
+  color: rgb(34, 34, 34);
+
+  @include mq("tablet", max) {
+    font-size: 32px;
+  }
+
+  a {
+    &:hover {
+      color: $my-orange;
+      text-decoration: underline;
+    }
+  }
+}
+
+.section-title-small {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(26, 26, 26);
+  line-height: 1.333;
+  text-align: left;
+}

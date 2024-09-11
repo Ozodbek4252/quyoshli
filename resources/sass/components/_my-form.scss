@@ -1,0 +1,327 @@
+.my-form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      order: -1;
+    }
+  }
+
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: normal;
+    color: rgb(34, 34, 34);
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    color: rgba(34, 34, 34, 0.502);
+    line-height: 1.333;
+    @extend %tr02;
+  }
+
+  input,
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(34, 34, 34, 0.2);
+    border-radius: 6px;
+    background-color: transparent;
+    height: 50px;
+    padding: 6px 15px;
+    color: rgba(34, 34, 34, 0.99);
+    @extend %tr02;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.333;
+
+    @include mq("tablet", max) {
+      font-size: 16px;
+    }
+
+    @include mq("phone-small", max) {
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      color: rgba(34, 34, 34, 0.502);
+    }
+
+    &:focus {
+      border-color: $my-orange;
+
+      & ~ label {
+        color: $my-orange;
+      }
+    }
+  }
+  textarea {
+    height: auto;
+    resize: none;
+  }
+  select {
+    &:focus {
+      border-color: rgba(34, 34, 34, 0.2);
+      box-shadow: unset;
+      & ~ label {
+        color: $my-orange;
+      }
+    }
+  }
+
+  .reset-password {
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: underline;
+    text-align: right;
+  }
+
+  .form-payment {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    label {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(26, 26, 26) !important;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    & > div {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    & + div {
+      margin-top: 50px;
+      textarea {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        padding: 8px 15px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: rgba(34, 34, 34, 0.99);
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        transition: all 0.2s ease-in-out;
+        resize: none;
+        border-color: rgba(0, 0, 0, 0.2);
+
+        &:focus {
+          border-color: $my-orange;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(26, 26, 26);
+    line-height: 1.333;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(26, 26, 26);
+    line-height: 1.333;
+    text-align: left;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(26, 26, 26);
+    line-height: 1.333;
+    text-align: left;
+  }
+
+  .custom-control-label::before {
+    background-color: transparent;
+  }
+
+  .custom-control-label::after {
+    width: 1.7rem;
+    height: 1.7rem;
+    top: -1px;
+    left: -1.7rem;
+    background: no-repeat 35%/35% 35%;
+    // background: unset;
+    // content: "\f00c";
+    // font-family: "Font Awesome 5 Pro";
+    // font-weight: 300;
+  }
+
+  .custom-checkbox
+    .custom-control-input:checked
+    ~ .custom-control-label::after {
+    background-image: url("../img/check.png");
+  }
+  .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+    color: #fff;
+    background-color: transparent;
+    border-color: $my-orange;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    color: white;
+    background-color: transparent;
+    border-color: $my-orange;
+  }
+
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: #adb5bd;
+  }
+
+  .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: unset;
+  }
+  .custom-radio {
+    font-size: 16px;
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+  }
+
+  .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: none;
+    width: 11px;
+    height: 11px;
+    background-color: #ff621a;
+    border-radius: 50%;
+    top: 0.4rem;
+    left: -1.35rem;
+  }
+  .custom-radio .custom-control-label::after {
+    background: no-repeat 38%/30% 30%;
+  }
+
+  .my-custom-control {
+    .custom-control-label {
+      font-size: 16px;
+      color: #000;
+      font-weight: normal;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::before {
+      color: #fff;
+      background-color: #ff621a;
+      border-color: #ff621a;
+    }
+  }
+}
+
+.my-form__countBy {
+  select {
+    height: 32px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: normal;
+    color: #222;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cbccd3;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0);
+    min-width: 150px;
+
+    @include mq("tablet", max) {
+      min-width: unset;
+      max-width: 100px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+  }
+}
+
+.select-months {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -12px;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  margin-top: 30px;
+  padding: 0 15px;
+  label {
+    cursor: pointer;
+    min-width: 60px;
+    text-align: center;
+    font-size: 16px;
+    &::before {
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    color: #000 !important;
+  }
+
+  input {
+    display: none;
+  }
+
+  .custom-control {
+    &-inline {
+      margin: 0 5px;
+    }
+    padding-left: 0;
+    position: relative;
+    z-index: 22;
+  }
+
+  .custom-control-label::after {
+    top: -17.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+
+  .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+    top: -17.5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .custom-control-label::before {
+    background-color: #fff;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #fff;
+  }
+}

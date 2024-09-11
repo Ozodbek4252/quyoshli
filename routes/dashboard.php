@@ -2,10 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::group(['prefix' => '/dashboard', 'namespace' => 'Dashboard', 'middleware' => ['auth:staff', 'blocked']], function () {
     Route::get('/', 'Controller@index')->name('dashboard');
     Route::post('/count', 'Controller@count')->name('dashboard.count');
