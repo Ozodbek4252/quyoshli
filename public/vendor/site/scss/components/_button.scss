@@ -1,0 +1,144 @@
+.my-btn__white {
+  padding: 12px 15px;
+  width: 170px;
+  margin-top: 20px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(203, 86, 42, 0);
+  font-size: 16px;
+  border-radius: 25.5px;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+  line-height: 1;
+  text-align: center;
+
+  i {
+    font-size: 14px;
+    @extend %tr02;
+  }
+
+  &:hover {
+    i {
+      transform: translateX(5px);
+    }
+    color: white;
+    background-color: rgba(white, 0.15);
+  }
+}
+
+.my-btn {
+  height: 45px;
+  min-width: 120px;
+  padding: 8px 15px;
+  border: 1px solid transparent;
+  border-radius: 22.5px;
+  font-size: 18px;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  line-height: 1;
+  text-align: center;
+  @extend %tr02;
+
+  &__gray {
+    background-color: rgb(239, 239, 239);
+
+    &:hover {
+      background-color: rgba($color: $my-dark-gray, $alpha: 0.3);
+    }
+  }
+
+  &__orange {
+    background-color: $my-orange;
+    color: white;
+
+    &:hover {
+      background-color: #d65a12;
+    }
+
+    &--small {
+      padding: 4px 10px;
+      font-size: 14px;
+      height: auto;
+      min-width: unset;
+      cursor: unset !important;
+
+      &:hover {
+        background-color: $my-orange;
+      }
+    }
+  }
+}
+
+.btn-links {
+  display: inline-block;
+  min-width: 200px;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 27.5px;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &__one {
+    background-color: #f8445a;
+    border-color: rgb(248, 68, 90);
+    color: white;
+
+    &.bg__green {
+      background-color: #42c28d;
+      border-color: #42c28d;
+    }
+    &:hover {
+      color: white;
+      box-shadow: 0px 5px 14.25px 0.75px rgba(248, 68, 90, 0.35);
+      &.bg__green {
+        background-color: #42c28d;
+        box-shadow: 0px 5px 14.25px 0.75px rgba(66, 194, 141, 0.35);
+        border-color: #42c28d;
+      }
+    }
+  }
+
+  &__two {
+    background-color: $my-orange;
+    border-color: $my-orange;
+    color: white;
+
+    &:hover {
+      color: white;
+      box-shadow: 0px 5px 14.25px 0.75px rgba(255, 99, 25, 0.35);
+    }
+  }
+  &__three {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 2px;
+    color: white;
+    color: rgb(0, 0, 0);
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.4);
+    }
+  }
+}
+
+.no-button {
+  background-color: #c2c2c2 !important;
+  border-color: #c2c2c2 !important;
+  box-shadow: none !important;
+  cursor: no-drop;
+  &:hover {
+    background-color: #c2c2c2 !important;
+    box-shadow: none !important;
+    border-color: #c2c2c2 !important;
+  }
+}

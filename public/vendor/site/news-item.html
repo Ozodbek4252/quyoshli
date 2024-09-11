@@ -1,0 +1,1684 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#fff">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#fff">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="stylesheet" href="libs/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <title>AliStore | Покупайте Galaxy S6 в кредит без предоплат</title>
+</head>
+
+<body>
+  <!-- Return to Top -->
+  <a href="javascript:" id="return-to-top">
+      <i class="fal fa-chevron-up"></i>
+  </a>
+  
+  <!-- TopBar -->
+  <div class="topbar">
+      <div class="topbar-top">
+          <div class="container">
+              <div class="topbar-top__left">
+                  <div class="lang">
+                      <div class="lang-selected">Ru <i class="fa fa-caret-down"></i></div>
+                      <div class="lang-list">
+                          <a class="active" href="#ru">Ru</a>
+                          <a href="#uz">Uz</a>
+                      </div>
+                  </div>
+                  <a href="balance.html" class="balance">
+                      <i class="fas fa-balance-scale"></i>
+                      <span>Сравнение</span>
+                      <div class="balance-count">
+                          <input type="text" readonly value="0">
+                      </div>
+                  </a>
+              </div>
+              <div class="topbar-top__right">
+                  <a href="#about">О нас</a>
+                  <a href="javascript:void(0)" data-target="#registration" data-toggle="modal">Регистрация</a>
+                  <a href="javascript:void(0)" data-target="#login" data-toggle="modal">Вход в кабинет</a>
+              </div>
+          </div>
+      </div>
+      <div class="topbar-bottom">
+          <div class="container">
+              <a class="logo" href="/">
+                  <img src="img/logo3.png" alt="Logo">
+              </a>
+              <div class="search">
+                  <input type="text" placeholder="Поиск по сайту">
+                  <a href="#"><i class="fal fa-search"></i></a>
+              </div>
+              <div class="just-call">
+                  <a href="tel:+998935033030"><i class="fas fa-mobile-alt"></i> <span>+998 93 503 30 30</span></a>
+                  <a href="javascript:void(0)" data-target="#feedback" data-toggle="modal">Обратная связь</a>
+              </div>
+              <div class="selected-products">
+                  <a href="favorite.html" class="favorite">
+                      <i class="fas fa-heart"></i>
+                      <div class="favorite-count">
+                          <input type="text" readonly value="0">
+                      </div>
+                  </a>
+                  <a href="javascript:" data-target="#basket_modal" data-toggle="modal" class="basket">
+                      <i class="fas fa-shopping-basket"></i>
+                      <div class="basket-count">
+                          <input type="text" readonly value="0">
+                      </div>
+                  </a>
+              </div>
+              <button class="navbar-toggler">
+                  <div class="hamburger hamburger--elastic">
+                      <div class="hamburger-box">
+                          <div class="hamburger-inner"></div>
+                      </div>
+                  </div>
+              </button>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Navbar -->
+  <div class="my-navbar">
+      <div class="container">
+          <ul class="nav">
+              <li class="nav-item checkout">
+                  <a href="#" class="dropbtn"><span>Акции и <br> скидки</span></a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="dropbtn">
+                      <span>
+                          Мобильные телефоны и аксессуары к ним
+                      </span>
+                  </a>
+                  <i class="fal fa-chevron-down"></i>
+                  <div class="nav-item-content">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Встраиваемая техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Духовые шкафы</a>
+                                      <a href="#">Панели газовые и электрические</a>
+                                      <a href="#">Вытяжки</a>
+                                      <a href="#">Встраиваемые посудомоечные машины</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Встраиваемые микроволновые печи</a>
+                                      <a href="#">Стиральные машины встраиваемые</a>
+                                      <a href="#">Прочая встраиваемая техника</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="dropbtn">
+                      <span>
+                          Телевизоры и Видеотехника
+                      </span>
+                  </a>
+                  <i class="fal fa-chevron-down"></i>
+                  <div class="nav-item-content">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Встраиваемая техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Духовые шкафы</a>
+                                      <a href="#">Панели газовые и электрические</a>
+                                      <a href="#">Вытяжки</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Встраиваемые микроволновые печи</a>
+                                      <a href="#">Прочая встраиваемая техника</a>
+                                  </div>
+                              </div>
+  
+  
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="dropbtn">
+                      <span>
+                          Ноутбуки и компьютеры
+                      </span>
+                  </a>
+                  <i class="fal fa-chevron-down"></i>
+                  <div class="nav-item-content">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                      <a href="#">Кулиры для воды</a>
+                                      <a href="#">Кулиры для воды</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Встраиваемая техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Духовые шкафы</a>
+                                      <a href="#">Панели газовые и электрические</a>
+                                      <a href="#">Вытяжки</a>
+                                      <a href="#">Встраиваемые посудомоечные машины</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Встраиваемые микроволновые печи</a>
+                                      <a href="#">Стиральные машины встраиваемые</a>
+                                      <a href="#">Прочая встраиваемая техника</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                      <a href="#">Кулиры для воды</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="dropbtn">
+                      <span>
+                          Фотоаппараты и видеокамеры
+                      </span>
+                  </a>
+                  <i class="fal fa-chevron-down"></i>
+                  <div class="nav-item-content">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Встраиваемая техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Духовые шкафы</a>
+                                      <a href="#">Панели газовые и электрические</a>
+                                      <a href="#">Вытяжки</a>
+                                      <a href="#">Встраиваемые посудомоечные машины</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Встраиваемые микроволновые печи</a>
+                                      <a href="#">Стиральные машины встраиваемые</a>
+                                      <a href="#">Прочая встраиваемая техника</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="dropbtn">
+                      <span>
+                          Крупная бытовая техника
+                      </span>
+                  </a>
+                  <i class="fal fa-chevron-down"></i>
+                  <div class="nav-item-content">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Встраиваемая техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Духовые шкафы</a>
+                                      <a href="#">Панели газовые и электрические</a>
+                                      <a href="#">Вытяжки</a>
+                                      <a href="#">Встраиваемые посудомоечные машины</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Встраиваемые микроволновые печи</a>
+                                      <a href="#">Стиральные машины встраиваемые</a>
+                                      <a href="#">Прочая встраиваемая техника</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="dropbtn">
+                      <span>
+                          Мелкая бытовая техника
+                      </span>
+                  </a>
+                  <i class="fal fa-chevron-down"></i>
+                  <div class="nav-item-content">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Встраиваемая техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Духовые шкафы</a>
+                                      <a href="#">Панели газовые и электрические</a>
+                                      <a href="#">Вытяжки</a>
+                                      <a href="#">Встраиваемые посудомоечные машины</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Встраиваемые микроволновые печи</a>
+                                      <a href="#">Стиральные машины встраиваемые</a>
+                                      <a href="#">Прочая встраиваемая техника</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="dropbtn">
+                      <span>
+                          Техника для ухода за собой
+                      </span>
+                  </a>
+                  <i class="fal fa-chevron-down"></i>
+                  <div class="nav-item-content">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Встраиваемая техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Духовые шкафы</a>
+                                      <a href="#">Панели газовые и электрические</a>
+                                      <a href="#">Вытяжки</a>
+                                      <a href="#">Встраиваемые посудомоечные машины</a>
+                                      <a href="#">Холодильники и морозильники встаиваемые</a>
+                                      <a href="#">Встраиваемые микроволновые печи</a>
+                                      <a href="#">Стиральные машины встраиваемые</a>
+                                      <a href="#">Прочая встраиваемая техника</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                              <div class="col-xl-2 col-lg-3 mb-lg-3 mb-1">
+                                  <h3 class="nav-item-content__title"><a href="#">Крупная кухонная техника</a> <i
+                                          class="fal fa-plus"></i></h3>
+                                  <div class="nav-item-content__toggle">
+                                      <a href="#">Холодильники и морозильные камеры</a>
+                                      <a href="#">Холодильники Side-by-Side и многодверные</a>
+                                      <a href="#">Морозильники</a>
+                                      <a href="#">Плиты газовые</a>
+                                      <a href="#">Плиты электрические</a>
+                                      <a href="#">Посудомоечные машины</a>
+                                      <a href="#">Кулиры для воды</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="container pt-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Главная</a></li>
+      <li class="breadcrumb-item"><a href="#">Новости</a></li>
+      <li class="breadcrumb-item active">Покупайте Galaxy S6 в кредит без предоплат</li>
+    </ol>
+  </div>
+
+  <!-- Main -->
+  <main>
+    <section class="section-news-item">
+      <div class="container">
+        <h2 class="section-title">Asus розыгрывает игровой ноутбук за подписку</h2>
+
+        <div class="news-item my-3">
+          <div class="news-item-widget">
+            <div class="news-item-seen"><i class="fas fa-eye"></i> 245</div>
+            <div class="news-item-date">Сентябрь 27, 2020</div>
+          </div>
+          <div class="news-item-content">
+            <p>
+              С другой стороны новая модель организационной деятельности позволяет оценить значение форм развития.
+              Разнообразный и богатый опыт рамки и место обучения кадров позволяет оценить значение существенных
+              финансовых и административных условий. Задача организации, в особенности же рамки и место обучения кадров
+              позволяет выполнять важные задания по разработке направлений прогрессивного развития. Задача организации,
+              в
+              особенности же постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу
+              (специалистов) участие в формировании систем массового участия. Равным образом постоянный количественный
+              рост и сфера нашей активности позволяет выполнять важные задания по разработке форм развития.
+            </p>
+            <ul>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+            </ul>
+            <p>
+              С другой стороны сложившаяся структура организации требуют определения и уточнения направлений
+              прогрессивного развития. С другой стороны новая модель организационной деятельности обеспечивает широкому
+              кругу (специалистов) участие в формировании соответствующий условий активизации. Задача организации, в
+              особенности же сложившаяся структура организации в значительной степени обуславливает создание дальнейших
+              направлений развития. Не следует, однако забывать, что консультация с широким активом позволяет выполнять
+              важные задания по разработке системы обучения кадров, соответствует насущным потребностям.
+            </p>
+
+            <p>
+              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности влечет за собой процесс
+              внедрения и модернизации систем массового участия. Равным образом постоянное
+              информационно-пропагандистское
+              обеспечение нашей деятельности позволяет оценить значение модели развития. Не следует, однако забывать,
+              что
+              укрепление и развитие структуры требуют от нас анализа соответствующий условий активизации. Равным образом
+              дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки модели
+              развития. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют
+              определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.
+
+            <ul>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+            </ul>
+            </p>
+            <img src="https://picsum.photos/id/84/1600/600" alt="">
+
+            <p>
+              Равным образом начало повседневной работы по формированию позиции позволяет оценить значение
+              соответствующий
+              условий активизации. Задача организации, в особенности же укрепление и развитие структуры обеспечивает
+              широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении
+              поставленных задач. Не следует, однако забывать, что дальнейшее развитие различных форм деятельности
+              представляет собой интересный эксперимент проверки модели развития. Не следует, однако забывать, что
+              реализация намеченных плановых заданий требуют определения и уточнения систем массового участия.
+              Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требуют от нас анализа
+              направлений прогрессивного развития. Товарищи! начало повседневной работы по формированию позиции требуют
+              от
+              нас анализа системы обучения кадров, соответствует насущным потребностям.
+            </p>
+
+            <p>
+              Задача организации, в особенности же дальнейшее развитие различных форм деятельности представляет собой
+              интересный эксперимент проверки дальнейших направлений развития. Задача организации, в особенности же
+              консультация с широким активом позволяет оценить значение модели развития.
+
+            <ol>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+              <li>
+                <a href="#">Lorem ipsum dolor sit.</a>
+              </li>
+            </ol>
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mve3-fEuTHA" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>
+              Таким образом укрепление и развитие структуры представляет собой интересный эксперимент проверки новых
+              предложений. Товарищи! реализация намеченных плановых заданий представляет собой интересный эксперимент
+              проверки новых предложений. Повседневная практика показывает, что укрепление и развитие структуры
+              способствует подготовки и реализации модели развития. Разнообразный и богатый опыт дальнейшее развитие
+              различных форм деятельности требуют определения и уточнения существенных финансовых и административных
+              условий. Повседневная практика показывает, что укрепление и развитие структуры способствует подготовки и
+              реализации соответствующий условий активизации. Не следует, однако забывать, что новая модель
+              организационной деятельности играет важную роль в формировании новых предложений.
+            </p>
+
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td>№</td>
+                    <td>Таким</td>
+                    <td>образом</td>
+                    <td>укрепление</td>
+                    <td>развитие</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem, ipsum dolor.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit.</td>
+                    <td>Lorem, ipsu</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem, ipsu</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem, ipsum dolor.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit.</td>
+                    <td>Lorem, ipsu</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem, ipsu</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem, ipsum dolor.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit.</td>
+                    <td>Lorem, ipsu</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem, ipsu</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem, ipsum dolor.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit.</td>
+                    <td>Lorem, ipsu</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem, ipsum dolor.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit.</td>
+                    <td>Lorem, ipsu</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem, ipsum dolor.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit.</td>
+                    <td>Lorem, ipsu</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit.</td>
+                    <td>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <img src="https://picsum.photos/id/684/900/600" alt="">
+
+            <p>
+              Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности в
+              значительной
+              степени обуславливает создание соответствующий условий активизации. С другой стороны консультация с
+              широким
+              активом требуют определения и уточнения направлений прогрессивного развития. Задача организации, в
+              особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной
+              степени обуславливает создание направлений прогрессивного развития. С другой стороны укрепление и развитие
+              структуры требуют от нас анализа существенных финансовых и административных условий.
+            </p>
+
+            <p>
+              Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности влечет за собой
+              процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. Не следует,
+              однако забывать, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от
+              нас
+              анализа направлений прогрессивного развития. Не следует, однако забывать, что новая модель организационной
+              деятельности способствует подготовки и реализации системы обучения кадров, соответствует насущным
+              потребностям.
+            </p>
+          </div>
+
+          <div class="share">
+            <p>Поделиться:</p>
+            <div class="socials">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-telegram-plane"></i></a>
+              <a href="#"><i class="fab fa-vk"></i></a>
+              <a href="#"><i class="fab fa-odnoklassniki"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Другие новости -->
+    <section class="section-products">
+      <div class="container">
+        <h2 class="section-title">Другие новости</h2>
+
+        <div class="swiper-container swiper-product swiper-news">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="img/news-img1.png" alt="News image">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="img/news-img2.png" alt="News image">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="img/news-img3.png" alt="News image">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="img/news-item-img1.png" alt="News image">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="https://picsum.photos/id/684/600/400" alt="игровой">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="https://picsum.photos/id/1020/600/400" alt="игровой">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="https://picsum.photos/id/1025/600/400" alt="игровой">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="https://picsum.photos/id/684/600" alt="игровой">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="https://picsum.photos/id/1058/600/400" alt="игровой">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="news">
+                <a href="news-item.html" class="news-img">
+                  <img src="https://picsum.photos/id/1080/600/400" alt="игровой">
+                </a>
+                <div class="news-content">
+                  <div class="news-date">Сентябрь 27, 2020</div>
+                  <h3 class="news-title"><a href="news-item.html">Asus розыгрывает игровой ноутбук за
+                      подписку Lorem ipsum dolor sit.</a>
+                  </h3>
+                  <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad
+                    minim veniam, quis nostrud exercitation ullamco</p>
+                  <a href="news-item.html" class="news-link">Подробнее <i class="fal fa-chevron-right ml-2"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next swiper-button-next-news"></div>
+          <div class="swiper-button-prev swiper-button-prev-news"></div>
+
+          <!-- Add Pagination -->
+          <div class="swiper-pagination swiper-pagination-news"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mb-3 mb-lg-0">
+            <a class="logo mb-3" href="index.html">
+              <img src="img/logo3.png" alt="Logo">
+            </a>
+            <div class="copyright">2020 © <a href="index.html">Alistore.uz</a> | Все права защищены </div>
+            <div class="software-company">Разработка и дизайн <a href="#">Usoft</a></div>
+          </div>
+          <div class="col-md-8 col-lg-5 mb-md-0 mb-3">
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a href="default.html" class="nav-link">Пользовательское сограшение</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="default2.html" class="nav-link">Правила доставки</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-6">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a href="news.html" class="nav-link">Новости</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Акции</a>
+                  </li>
+                </ul>
+              </div>
+  
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <div class="phone mb-3">
+              <a href="tel:+998978008050"><i class="fas fa-mobile-alt"></i> <span>(+998) 97 800 80
+                  50 </span></a>
+            </div>
+            <div class="phone mb-3">
+              <a href="tel:+998974542925"><i class="fas fa-mobile-alt"></i> <span>(+998) 97 454 29
+                  25 </span></a>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-1 d-lg-flex justify-content-lg-end align-items-lg-start mb-md-0 mb-3">
+            <div class="socials">
+              <a href="#"><i class="fab fa-telegram-plane"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </footer>
+  
+  <!-- Авторизация -->
+  <div class="modal fade login" id="login">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <i class="fal fa-times"></i>
+          </button>
+  
+          <h4>Авторизация</h4>
+  
+          <form action="index.html" class="my-form my-form__auth">
+            <div class="mt-4 my-form__group">
+              <input type="tel" placeholder="+998 Введите номер телефона" id="login_phone" required>
+              <label for="login_phone">Номер телефона</label>
+            </div>
+            <div class="mt-4 my-form__group">
+              <input type="password" placeholder="Введите ваш пароль" id="login_password" required>
+              <label for="login_password">Пароль</label>
+            </div>
+            <div class="mt-4 d-flex justify-content-end flex-column reply">
+              <a href="javascript:void(0)" class="reset-password">Забыли пароль?</a>
+              <a href="#" class="reset-password">Отправить код через <b id="time-down"></b></a>
+            </div>
+            <div class="mt-3 d-flex justify-content-md-end justify-content-center align-items-center">
+              <button type="button" data-dismiss="modal" class="my-btn my-btn__gray mr-3">Отмена</button>
+              <button type="sumbit" class="my-btn my-btn__orange">Войти</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Восстановление пароля -->
+  <div class="modal fade reset_password" id="reset_password">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <i class="fal fa-times"></i>
+          </button>
+  
+          <h4>Восстановление пароля</h4>
+  
+          <form action="index.html" class="my-form my-form__reset">
+            <div class="mt-4 my-form__group">
+              <input type="tel" placeholder="+998 Введите номер телефона" id="reset_phone" required>
+              <label for="reset_phone">Номер телефона</label>
+            </div>
+  
+            <div class="mt-4 d-flex justify-content-md-end justify-content-center align-items-center">
+              <button type="button" data-dismiss="modal" class="my-btn my-btn__gray mr-3">Отмена</button>
+              <button type="sumbit" class="my-btn my-btn__orange" data-target="#verification" data-toggle="modal"
+                data-dismiss="modal">Восстановить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Регистрация -->
+  <div class="modal fade registration" id="registration">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <i class="fal fa-times"></i>
+          </button>
+  
+          <h4>Регистрация</h4>
+  
+          <form action="index.html" class="my-form my-form__auth">
+            <div class="row">
+              <div class="col-md-6 mt-4 my-form__group">
+                <input type="tel" placeholder="+998 Введите номер телефона" id="your_phone" required>
+                <label for="your_phone">Номер телефона</label>
+              </div>
+              <div class="col-md-6 mt-4 my-form__group">
+                <input type="email" placeholder="" id="your_email">
+                <label for="your_email">Электронная почта</label>
+              </div>
+              <div class="col-md-6 mt-4 my-form__group">
+                <input type="text" placeholder="" id="your_name" required>
+                <label for="your_name">Имя</label>
+              </div>
+              <div class="col-md-6 mt-4 my-form__group">
+                <input type="text" placeholder="" id="your_last_name">
+                <label for="your_last_name">Фамилия</label>
+              </div>
+              <div class="col-md-6 mt-4 my-form__group">
+                <input type="password" placeholder="" id="enter_password" required>
+                <label for="enter_password">Пароль</label>
+              </div>
+              <div class="col-md-6 mt-4 my-form__group">
+                <input type="password" placeholder="" id="comfirm_password" required>
+                <label for="comfirm_password">Повторите пароль</label>
+              </div>
+            </div>
+  
+            <div class="mt-5 d-flex justify-content-md-end justify-content-center align-items-center">
+              <button type="button" data-dismiss="modal" class="my-btn my-btn__gray mr-3">Отмена</button>
+              <button type="sumbit" class="my-btn my-btn__orange" data-target="#verification" data-toggle="modal"
+                data-dismiss="modal">Зарегестрироваться</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Подтверждение -->
+  <div class="modal fade verification" id="verification">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <i class="fal fa-times"></i>
+          </button>
+  
+          <h4>Подтверждение</h4>
+  
+          <form action="index.html" class="my-form my-form__verification">
+            <p>На ваш номер <strong>+998 974682150</strong> отправлено смс с кодом подтверждения. Оно придёт в течение
+              нескольких минут.</p>
+  
+            <div class="mt-4 my-form__group">
+              <input type="text" placeholder="Введите код из смс" id="verification_code" required>
+              <label for="verification_code">Код из смс</label>
+            </div>
+  
+            <div class="mt-4 d-flex justify-content-md-end justify-content-center align-items-center">
+              <button type="button" data-dismiss="modal" class="my-btn my-btn__gray mr-3">Отмена</button>
+              <button type="sumbit" class="my-btn my-btn__orange">Подтвердить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Форма обратной связи -->
+  <div class="modal fade feedback" id="feedback">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <i class="fal fa-times"></i>
+          </button>
+  
+          <h4>Форма обратной связи</h4>
+  
+          <form action="index.html" class="my-form my-form__auth">
+            <div class="mt-4 my-form__group">
+              <input type="text" placeholder="" id="your_name" required>
+              <label for="your_name">Ваше имя</label>
+            </div>
+            <div class="mt-4 my-form__group">
+              <input type="tel" placeholder="+998 Введите номер телефона" id="feedback_phone" required>
+              <label for="feedback_phone">Номер телефона</label>
+            </div>
+            <div class="mt-4 my-form__group">
+              <textarea name="" id="your_message" cols="30" rows="5"></textarea>
+              <label for="your_message">Ваш вопрос или сообщение</label>
+            </div>
+            <div class="mt-3 d-flex justify-content-md-end justify-content-center align-items-center">
+              <button type="sumbit" class="my-btn my-btn__orange">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Пользовательское соглашение -->
+  <div class="modal fade terms-of-use" id="terms_of_use">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h4>Пользовательское соглашение</h4>
+  
+          <div class="terms-of-use__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+              magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+              dolore magnam aliquam quaerat voluptatem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo.
+            </p>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+              dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+              sit
+              amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+              magnam
+              aliquam quaerat voluptatem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+              magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+              dolore magnam aliquam quaerat voluptatem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo.
+            </p>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+              dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+              sit
+              amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+              magnam
+              aliquam quaerat voluptatem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+              magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+              dolore magnam aliquam quaerat voluptatem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo.
+            </p>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+              dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+              sit
+              amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+              magnam
+              aliquam quaerat voluptatem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+              magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
+              dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+              dolore magnam aliquam quaerat voluptatem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+              laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo.
+            </p>
+            <p>
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+              dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+              sit
+              amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+              magnam
+              aliquam quaerat voluptatem.
+            </p>
+          </div>
+  
+          <div class="mt-3 d-flex justify-content-center align-items-center">
+            <button type="button" data-dismiss="modal" class="my-btn my-btn__orange">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Корзина -->
+  <div class="modal fade basket-modal" id="basket_modal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <i class="fal fa-times"></i>
+          </button>
+  
+          <h4>Корзина</h4>
+  
+          <form action="index.html" class="my-form my-form__auth">
+            <div class="product">
+              <div class="row align-items-center">
+                <div class="col-lg-2">
+                  <div class="product-img">
+                    <img src="img/product-img17.png" alt="Product image">
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <h3 class="product-title">Philips EasySpeed Advanced GC3675/30
+                    беспроводной Lorem ipsum dolor sit.</h3>
+                  <div class="product-price_and_checkout mt-2">
+                    <div class="product-price-by-count mr-3">Цена 4 500 000 сум/шт</div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="product-buttons">
+                    <button class="product-to_delete">
+                      <i class="fal fa-times fa-2x"></i>
+                      <span>Удалить</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="row align-items-center">
+                <div class="col-lg-2">
+                  <div class="product-img">
+                    <a href="product-item.html">
+                      <img src="img/product-img17.png" alt="Product image">
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <h3 class="product-title"><a href="product-item.html">Philips EasySpeed Advanced GC3675/30
+                      беспроводной Lorem ipsum dolor sit.</a></h3>
+                  <div class="product-price_and_checkout mt-2">
+                    <div class="product-price-by-count mr-3">Цена 4 500 000 сум/шт</div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="product-buttons">
+                    <button class="product-to_delete">
+                      <i class="fal fa-times fa-2x"></i>
+                      <span>Удалить</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="sum-of-products d-flex justify-content-end my-4">
+              <h3>Общая сумма: <span>23 965 000 сум</span></h3>
+            </div>
+            <div class="mt-3 d-flex justify-content-md-end justify-content-center align-items-center">
+              <button type="sumbit" class="my-btn my-btn__orange">Оформить</button>
+              <button type="button" class="my-btn my-btn__gray ml-3">Очистить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="libs/jquery/jquery.min.js"></script>
+  <script src="libs/popper/popper.min.js"></script>
+  <script src="libs/bootstrap/bootstrap.min.js"></script>
+  <script src="libs/swiper/js/swiper.min.js"></script>
+  <script src="libs/pace.min.js"></script>
+  <script src="libs/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
