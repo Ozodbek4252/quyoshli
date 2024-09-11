@@ -1,0 +1,107 @@
+services:
+    quyoshli:
+        image: kooldev/php:8.2
+        container_name: quyoshli
+        working_dir: /quyoshli
+        restart: always
+        networks:
+            - internal
+            - nginx_network
+        volumes:
+            - ".:/quyoshli"
+            - "./docker/php/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini"
+        links:
+            - quyoshli-database
+        depends_on:
+            - quyoshli-database
+        environment:
+            - PHP_EXECUTABLE_PATH=/usr/local/bin/php
+    quyoshli-nginx:
+        image: nginx:alpine
+        container_name: quyoshli-nginx
+        restart: always
+        working_dir: /quyoshli
+        networks:
+            - internal
+            - nginx_network
+        ports:
+            - "9005:80"
+        volumes:
+            - .:/quyoshli
+            - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - quyoshli
+    quyoshli-composer:
+        image: composer:latest
+        container_name: quyoshli-composer
+        working_dir: /quyoshli
+        command: update --ignore-platform-reqs
+        volumes:
+            - .:/quyoshli
+        restart: on-failure
+        depends_on:
+            - quyoshli
+    quyoshli-database:
+        image: mariadb:latest
+        restart: always
+        container_name: quyoshli-database
+        working_dir: /quyoshli
+        networks:
+            - internal
+            - nginx_network
+        # command: mysqld --skip-grant-tables
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=quyoshli
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=password
+        volumes:
+            - .:/quyoshli
+            - ./quyoshli-database:/var/lib/mysql
+        ports:
+            - "8003:3306"
+    quyoshli-redis:
+        image: "redis:alpine"
+        ports:
+            - "${FORWARD_REDIS_PORT:-6381}:6381"
+        volumes:
+            - quyoshli-redis:/data
+        networks:
+            - internal
+            - nginx_network
+        command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+
+    app:
+        image: node:16-alpine
+        working_dir: /app
+        volumes:
+        - .:/app
+        command: sh -c "npm install && npm run build"
+    quyoshli-npm:
+        image: node:20-alpine
+        container_name: quyoshli-npm
+        working_dir: /quyoshli
+        volumes:
+            - ".:/quyoshli"
+        depends_on:
+            - quyoshli
+    adminer:
+        image: adminer
+        restart: always
+        networks:
+            - nginx_network
+        ports:
+            - "8080:8080"
+networks:
+    nginx_network:
+        external: true
+    internal:
+        driver: overlay
+        name: "global"
+        attachable: true
+        external: true
+volumes:
+    quyoshli-database:
+        driver: local
+    quyoshli-redis:
+        driver: local
