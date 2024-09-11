@@ -9,13 +9,20 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-json": "*",
+        "barryvdh/laravel-dompdf": "^3.0",
+        "franzose/laravel-smpp": "^1.5",
+        "goodoneuz/pay-uz": "^2.2",
+        "guzzlehttp/guzzle": "^7.9",
+        "intervention/image": "^3.8",
+        "jenssegers/agent": "*",
         "laravel/framework": "^11.9",
         "laravel/helpers": "^1.7",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "maatwebsite/excel": "^3.1",
         "spatie/laravel-activitylog": "^4.8",
-        "jenssegers/agent": "*"
+        "watson/active": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
