@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\User;
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Favorite extends Model
 {
-
     public $timestamps = false;
 
     public $incrementing = false;

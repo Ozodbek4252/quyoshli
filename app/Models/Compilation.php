@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Compilation extends Model
 {
-
     /**
      * @var array
      */

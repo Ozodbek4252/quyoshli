@@ -2,7 +2,7 @@
 
 namespace App\Jobs\Api\Auth;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Arr;
 use App\Http\Requests\Api\Auth\Login as LoginRequest;
 

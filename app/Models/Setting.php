@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\LogOptionsTrait;
 use Illuminate\Support\Facades\App;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -21,8 +22,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  */
 class Setting extends Model
 {
-
-    use LogsActivity;
+    use LogsActivity, LogOptionsTrait;
 
     /**
      * @var array
@@ -50,8 +50,22 @@ class Setting extends Model
     protected static $logName = 'settings';
     protected static $logOnlyDirty = true;
     protected static $logAttributes = [
-        'title', 'keywords', 'description', 'phone', 'address', 'socials', 'email', 'day_delivery', 'price_delivery',
-        'landmark', 'permissions', 'pickup_text', 'other', 'pickup', 'delivery', 'buy_one'
+        'title',
+        'keywords',
+        'description',
+        'phone',
+        'address',
+        'socials',
+        'email',
+        'day_delivery',
+        'price_delivery',
+        'landmark',
+        'permissions',
+        'pickup_text',
+        'other',
+        'pickup',
+        'delivery',
+        'buy_one'
     ];
     protected static $submitEmptyLogs = false;
 
@@ -194,5 +208,4 @@ class Setting extends Model
     {
         return (string) $this->socials['okru'];
     }
-
 }

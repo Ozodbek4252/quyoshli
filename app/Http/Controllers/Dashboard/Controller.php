@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\User;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Billing;
 use App\Models\Product;

@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\LogOptionsTrait;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Slider extends Model
 {
-    use LogsActivity;
+    use LogsActivity, LogOptionsTrait;
 
     protected $fillable = [
         'name',
@@ -23,7 +24,6 @@ class Slider extends Model
     protected $casts = [
         'published' => 'boolean'
     ];
-
 
     protected static $logName = 'sliders';
     protected static $logOnlyDirty = true;

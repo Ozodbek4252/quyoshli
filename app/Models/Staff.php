@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Traits\LogOptionsTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Staff extends Authenticatable
 {
-    use LogsActivity;
+    use LogsActivity, LogOptionsTrait;
 
     protected $fillable = [
         'username',

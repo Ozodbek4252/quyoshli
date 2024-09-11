@@ -3,7 +3,7 @@
 
 namespace App\Helpers;
 
-use App\User;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Currency;
 use App\Models\OrderProducts;

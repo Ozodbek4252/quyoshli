@@ -3,7 +3,7 @@
 namespace App\Jobs\Dashboard\User;
 
 use App\Models\Staff;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Arr;
 use \App\Http\Requests\Dashboard\User\Create as Request;
 

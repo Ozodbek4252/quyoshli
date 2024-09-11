@@ -5,13 +5,10 @@ namespace App\Models;
 use App\Helpers\Month;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
-use Spatie\Activitylog\Traits\LogsActivity;
 
 class Post extends Model
 {
-
     /**
      * @var array
      */

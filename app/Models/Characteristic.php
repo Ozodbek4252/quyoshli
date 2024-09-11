@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Characteristic extends Model
 {
-
     /**
      * @var array
      */

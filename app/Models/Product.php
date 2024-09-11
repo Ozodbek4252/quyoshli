@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\User;
+use App\Traits\LogOptionsTrait;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 
@@ -37,7 +38,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  */
 class Product extends Model
 {
-    use SoftDeletes, LogsActivity;
+    use SoftDeletes, LogsActivity, LogOptionsTrait;
 
     protected $appends = ['isFavorite', 'discountPrice', 'diffDate', 'isCart', 'onCredit', 'isAvailable'];
 

@@ -8,7 +8,7 @@ use App\Imports\UsersImport;
 use App\Jobs\Dashboard\User\Create;
 use App\Models\Role;
 use App\Models\Staff;
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller as ExController;
 
 use App\Http\Requests\Dashboard\User\Update as UpdateRequest;

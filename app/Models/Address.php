@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\User;
+use App\Models\User;
 use App\Models\City;
-
+use App\Traits\LogOptionsTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -26,8 +26,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
  */
 class Address extends Model
 {
-
-    use LogsActivity;
+    use LogsActivity, LogOptionsTrait;
     //use SoftDeletes;
 
     /**

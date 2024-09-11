@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->jsonb('currency');
             $table->unsignedBigInteger('branch_id')->nullable();
 
-            $table->enum('status', ['processing', 'collected', 'waiting_buyer', 'in_way', 'closed', 'cancelled', 'replacement'])->default('processing');
+            $table->enum('status', ['processing', 'collected', 'waiting_buyer', 'in_way', 'closed', 'cancelled', 'replacement', 'completed'])->default('processing');
 
             $table->enum('payment_type', ['cash', 'payme', 'apelsin', 'click', 'uzcard', 'oson', 'credit', 'upay', 'paynet'])->default('cash');
             $table->enum('payment_status', ['waiting', 'cancelled', 'payed', 'cash', 'review'])->default('waiting');

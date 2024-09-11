@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use App\User;
+use App\Traits\LogOptionsTrait;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Role extends Model
 {
-    use LogsActivity;
+    use LogsActivity, LogOptionsTrait;
 
     protected $fillable = [
         'name',

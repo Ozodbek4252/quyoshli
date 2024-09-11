@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard\Notification;
 
 use App\Models\Notification;
 use App\Models\NotificationAvailable;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 //use App\Api\Firebase;

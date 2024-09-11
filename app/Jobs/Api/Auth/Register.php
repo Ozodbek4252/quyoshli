@@ -5,7 +5,7 @@ namespace App\Jobs\Api\Auth;
 use Illuminate\Support\Arr;
 use App\Http\Requests\Api\Auth\Register as RegisterRequest;
 
-use App\User;
+use App\Models\User;
 
 class Register
 {

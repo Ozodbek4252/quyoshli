@@ -6,7 +6,7 @@ namespace App\Helpers;
 
 use App\Models\Billing;
 use App\Models\Order;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class DashboardStatic

@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\LogOptionsTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Page extends Model
 {
-    use LogsActivity;
+    use LogsActivity, LogOptionsTrait;
 
     protected $guarded = ['id'];
 

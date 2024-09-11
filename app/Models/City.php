@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Facades\App;
-
+use App\Traits\LogOptionsTrait;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class City extends Model
 {
-
-    use LogsActivity;
+    use LogsActivity, LogOptionsTrait;
 
     protected $table = 'cities';
 

@@ -3,7 +3,7 @@
 namespace App\Jobs\Api\User;
 
 
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Arr;
 
 use App\Http\Requests\Api\User\Update as UpdateRequest;
