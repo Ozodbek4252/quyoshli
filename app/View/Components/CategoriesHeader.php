@@ -28,16 +28,16 @@ class CategoriesHeader extends Component
     public function render()
     {
         $categories = $this->categories->with(['parents' => function ($parent) {
-                    return $parent->select('id', 'name', 'parent_id', 'slug', 'published', 'image', 'position')
-                            ->orderBy('position', 'asc')->with(['parents' => function ($parent) {
-                                return $parent->select('id', 'name', 'parent_id', 'slug', 'published', 'position')
-                                        ->orderBy('position', 'asc');
-                            }]);
-                }])
-                ->orderBy('position', 'asc')
-                ->whereNull('parent_id')
-                ->where('published', true)
-                ->get(['id', 'name', 'slug', 'image']);
+            return $parent->select('id', 'name', 'parent_id', 'slug', 'published', 'image', 'position')
+                ->orderBy('position', 'asc')->with(['parents' => function ($parent) {
+                    return $parent->select('id', 'name', 'parent_id', 'slug', 'published', 'position')
+                        ->orderBy('position', 'asc');
+                }]);
+        }])
+            ->orderBy('position', 'asc')
+            ->whereNull('parent_id')
+            ->where('published', true)
+            ->get(['id', 'name', 'slug', 'image']);
 
         $categories->map(function ($category) {
             $category->hover = false;

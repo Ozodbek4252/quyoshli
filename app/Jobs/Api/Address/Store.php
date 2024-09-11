@@ -3,7 +3,6 @@
 namespace App\Jobs\Api\Address;
 
 use App\Models\Address;
-use App\Models\Currency;
 use Illuminate\Support\Arr;
 use App\Http\Requests\Api\Order\Request as OrderRequest;
 

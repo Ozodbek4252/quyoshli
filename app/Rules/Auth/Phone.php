@@ -6,7 +6,6 @@ use Illuminate\Contracts\Validation\Rule;
 
 class Phone implements Rule
 {
-
     /**
      * @param string $attribute
      * @param mixed $value

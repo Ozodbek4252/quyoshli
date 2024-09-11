@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class Category
 {
-
     /**
      * @return mixed
      */
@@ -27,7 +26,7 @@ class Category
      */
     public function getCategoriesAndCategoryId($category)
     {
-        $categories = $category->parents()->select('id', 'name', 'parent_id', 'slug','published')
+        $categories = $category->parents()->select('id', 'name', 'parent_id', 'slug', 'published')
             ->with('parent:id,name,slug,parent_id,published', 'parent.parent:id,name,slug,parent_id,published')
             ->get();
 
@@ -108,10 +107,10 @@ class Category
             $product->price_discount = $product->price_discount == null ? null : $product->getDiscountPrice();
         });
 
-//        $products->categories->map(function ($category) {
-//           $category->link = 'test.com';
-//           return $category;
-//        });
+        //        $products->categories->map(function ($category) {
+        //           $category->link = 'test.com';
+        //           return $category;
+        //        });
 
         return $products;
     }
@@ -127,7 +126,6 @@ class Category
         }])->whereHas('values', function ($query) {
             $query->whereNull('deleted_at');
         })->get();
-
 
         $characteristics = $characteristics->map(function ($char) {
             $group = $char->values->groupBy('value');
@@ -156,12 +154,12 @@ class Category
     public function getCategoryProducts($category)
     {
         $products = $category->products()
-                    ->select('id', 'name', 'poster_thumb', 'price', 'price_discount', 'popular', 'slug', 'leader_of_sales', 'currency')
-                    ->with('categories:id,name', 'children:id,child_id')
-                    ->whereHas('childrens')
-                    ->orderBy('products.id', 'desc')
-                    ->published()
-                    ->paginate(12);
+            ->select('id', 'name', 'poster_thumb', 'price', 'price_discount', 'popular', 'slug', 'leader_of_sales', 'currency')
+            ->with('categories:id,name', 'children:id,child_id')
+            ->whereHas('childrens')
+            ->orderBy('products.id', 'desc')
+            ->published()
+            ->paginate(12);
 
         $products->map(function ($product) {
             $product->price = $product->getPrice();
@@ -188,7 +186,7 @@ class Category
             ->whereHas('childrens')
             ->published();
 
-        if (count ($request->filter) > 0) {
+        if (count($request->filter) > 0) {
             $attributes = collect($request->filter)->map(function ($filter) {
                 return $filter;
             })->groupBy('id');
