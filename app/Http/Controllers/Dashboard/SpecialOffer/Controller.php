@@ -53,7 +53,7 @@ class Controller extends ExController
             $path = $specialOffer->getImage();
         }
 
-        $this->dispatchNow(UpdateJob::fromRequest($specialOffer, $request, $path));
+        $this->dispatchSync(UpdateJob::fromRequest($specialOffer, $request, $path));
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.specialOffers');
     }
@@ -73,7 +73,7 @@ class Controller extends ExController
             $path =  $request->file('image')->store('uploads/specialOffers');
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request, $path));
+        $this->dispatchSync(StoreJob::fromRequest($request, $path));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.specialOffers');
     }

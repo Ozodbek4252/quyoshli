@@ -41,7 +41,7 @@ class Controller extends ExController
      */
     public function update(UpdateRequest $request, Setting $setting)
     {
-        $this->dispatchNow(UpdateJob::fromRequest($setting, $request));
+        $this->dispatchSync(UpdateJob::fromRequest($setting, $request));
         $this->info(trans('admin.messages.updated'));
         return redirect()->back();
     }

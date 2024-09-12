@@ -50,7 +50,7 @@ class Controller extends ExController
             return view('dashboard.cities.update', compact('city', 'regions'));
         }
 
-        $this->dispatchNow(UpdateJob::fromRequest($city, $request));
+        $this->dispatchSync(UpdateJob::fromRequest($city, $request));
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.cities');
     }
@@ -67,7 +67,7 @@ class Controller extends ExController
             return view('dashboard.cities.store', compact('regions'));
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request));
+        $this->dispatchSync(StoreJob::fromRequest($request));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.cities');
     }

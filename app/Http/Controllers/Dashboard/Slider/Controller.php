@@ -57,7 +57,7 @@ class Controller extends ExController
             $path = $slider->getImage();
         }
 
-        $this->dispatchNow(UpdateJob::fromRequest($slider, $request, $path));
+        $this->dispatchSync(UpdateJob::fromRequest($slider, $request, $path));
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.sliders');
     }
@@ -79,7 +79,7 @@ class Controller extends ExController
             $path = $request->file('image')->store('uploads/sliders');
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request, $path));
+        $this->dispatchSync(StoreJob::fromRequest($request, $path));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.sliders');
     }

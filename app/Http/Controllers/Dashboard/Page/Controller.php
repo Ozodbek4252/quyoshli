@@ -40,7 +40,7 @@ class Controller extends ExController
             return view('dashboard.pages.edit', compact('page'));
         }
 
-        $this->dispatchNow(UpdateJob::fromRequest($page, $request));
+        $this->dispatchSync(UpdateJob::fromRequest($page, $request));
         $this->info(trans('admin.messages.updated'));
 
         return redirect()->back();
@@ -58,7 +58,7 @@ class Controller extends ExController
             return view('dashboard.pages.create');
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request));
+        $this->dispatchSync(StoreJob::fromRequest($request));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard');
     }

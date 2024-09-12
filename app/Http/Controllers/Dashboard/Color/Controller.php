@@ -25,7 +25,7 @@ class Controller extends BaseController
             return view('dashboard.colors.create');
         }
 
-        $this->dispatchNow(new Store($request));
+        $this->dispatchSync(new Store($request));
         $this->success(trans('admin.messages.created'));
         return redirect()->route('dashboard.colors');
     }
@@ -38,7 +38,7 @@ class Controller extends BaseController
             return view('dashboard.colors.update', compact('color'));
         }
 
-        $this->dispatchNow(new Update($request, $color));
+        $this->dispatchSync(new Update($request, $color));
         $this->success(trans('admin.messages.created'));
         return redirect()->route('dashboard.colors');
     }

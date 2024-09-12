@@ -46,7 +46,7 @@ class Controller extends ExController
         $path = $request->file('file')->store('uploads/files');
         $size = filesize($path);
 
-        $this->dispatchNow(StoreJob::fromRequest($request, $path, $size));
+        $this->dispatchSync(StoreJob::fromRequest($request, $path, $size));
 
         $this->success(trans('admin.messages.updated'));
         return redirect()->back();

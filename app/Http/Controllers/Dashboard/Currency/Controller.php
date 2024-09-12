@@ -43,7 +43,7 @@ class Controller extends ExController
             return view('dashboard.currency.store');
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request));
+        $this->dispatchSync(StoreJob::fromRequest($request));
         $this->success(trans('admin.messages.updated'));
 
         return redirect()->route('dashboard.currency');

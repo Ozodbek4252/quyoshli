@@ -52,7 +52,7 @@ class Controller extends ExController
             $path = $partner->getImage();
         }
 
-        $this->dispatchNow(UpdateJob::fromRequest($partner, $request, $path));
+        $this->dispatchSync(UpdateJob::fromRequest($partner, $request, $path));
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.partners');
     }
@@ -72,7 +72,7 @@ class Controller extends ExController
             $path =  $request->file('image')->store('uploads/partners');
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request, $path));
+        $this->dispatchSync(StoreJob::fromRequest($request, $path));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.partners');
     }

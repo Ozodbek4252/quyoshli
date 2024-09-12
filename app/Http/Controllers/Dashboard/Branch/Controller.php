@@ -25,7 +25,7 @@ class Controller extends BaseController
             return view('dashboard.branches.create');
         }
 
-        $this->dispatchNow(new Store($request));
+        $this->dispatchSync(new Store($request));
         $this->success(trans('admin.messages.created'));
         return redirect()->route('dashboard.branches');
     }
@@ -44,7 +44,7 @@ class Controller extends BaseController
             return view('dashboard.branches.edit', compact('branch'));
         }
 
-        $this->dispatchNow(new Update($request, $branch));
+        $this->dispatchSync(new Update($request, $branch));
         $this->success(trans('admin.messages.created'));
         return redirect()->route('dashboard.branches');
     }

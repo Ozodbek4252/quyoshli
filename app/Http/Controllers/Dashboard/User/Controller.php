@@ -98,7 +98,7 @@ class Controller extends ExController
             return view('dashboard.users.create', compact('roles'));
         }
 
-        $this->dispatchNow(new Create($request));
+        $this->dispatchSync(new Create($request));
 
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.staffs');
@@ -119,7 +119,7 @@ class Controller extends ExController
             $roles = Role::whereNotIn('id', [2])->get();
             return view('dashboard.users.update', compact('staff', 'roles'));
         }
-        $this->dispatchNow(new UpdateJob($staff, $request));
+        $this->dispatchSync(new UpdateJob($staff, $request));
 
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.staffs');

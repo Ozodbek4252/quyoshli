@@ -58,7 +58,7 @@ class Controller extends ExController
         }
 
 
-        $category = $this->dispatchNow(new StoreJob($request));
+        $category = $this->dispatchSync(new StoreJob($request));
 
         if (!empty($request->char)) {
             foreach ($request->char as $char) {
@@ -114,7 +114,7 @@ class Controller extends ExController
             $image = $category->image;
         }
 
-        $this->dispatchNow(new UpdateJob($category, $request, $image));
+        $this->dispatchSync(new UpdateJob($category, $request, $image));
 
         if (!empty($request->char)) {
             foreach ($request->char as $char) {

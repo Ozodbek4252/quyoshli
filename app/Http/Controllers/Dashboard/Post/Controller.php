@@ -72,7 +72,7 @@ class Controller extends ExController
 //                ]);
 //        }
 
-        $this->dispatchNow(UpdateJob::fromRequest($post, $request, $path));
+        $this->dispatchSync(UpdateJob::fromRequest($post, $request, $path));
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.posts', $lang);
     }
@@ -104,7 +104,7 @@ class Controller extends ExController
                 ]);
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request, $path));
+        $this->dispatchSync(StoreJob::fromRequest($request, $path));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.posts', $lang);
     }

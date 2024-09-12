@@ -55,7 +55,7 @@ class Controller extends ExController
 //            return view('dashboard.compilations.store', compact('categories'));
 //        }
 //
-//        $this->dispatchNow(new StoreJob($request));
+//        $this->dispatchSync(new StoreJob($request));
 //
 //        $this->success(trans('admin.messages.created'));
 //        return response()->json([
@@ -90,7 +90,7 @@ class Controller extends ExController
             return view('dashboard.compilations.update', compact('compilation', 'categories'));
         }
 
-        $this->dispatchNow(new UpdateJob($request, $compilation));
+        $this->dispatchSync(new UpdateJob($request, $compilation));
 
         $this->info(trans('admin.messages.updated'));
         return response()->json([

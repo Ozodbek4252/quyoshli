@@ -55,7 +55,7 @@ class Controller extends ExController
 
         //return $request->all();
 
-        $this->dispatchNow(UpdateJob::fromRequest($role, $request));
+        $this->dispatchSync(UpdateJob::fromRequest($role, $request));
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.roles');
     }
@@ -72,7 +72,7 @@ class Controller extends ExController
             return view('dashboard.roles.store');
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request));
+        $this->dispatchSync(StoreJob::fromRequest($request));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.roles');
     }

@@ -97,12 +97,12 @@ class Controller extends ExController
         }
 
 
-        $product = $this->dispatchNow(StoreJob::fromRequest($request));
+        $product = $this->dispatchSync(StoreJob::fromRequest($request));
         $product->categories()->attach([$request->getCategoryID()]);
 
         $this->charSync($product, $request->characteristics);
 
-        $child = $this->dispatchNow(new ChildJob($request, $product));
+        $child = $this->dispatchSync(new ChildJob($request, $product));
 
         $this->success(trans('admin.messages.created'));
 
@@ -303,12 +303,12 @@ class Controller extends ExController
             return view('dashboard.products.update', compact('categories', 'brands', 'colors', 'product'));
         }
 
-        $this->dispatchNow(new UpdateJob($product, $request));
-        $child  = $this->dispatchNow(new ChildUpdateJob($request, $product));
+        $this->dispatchSync(new UpdateJob($product, $request));
+        $child  = $this->dispatchSync(new ChildUpdateJob($request, $product));
 
         $this->charSync($product, $request->characteristics);
 
-        $this->dispatchNow(new DeletesJob($request));
+        $this->dispatchSync(new DeletesJob($request));
         $this->info(trans('admin.messages.updated'));
 
         return response()->json([

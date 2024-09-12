@@ -50,7 +50,7 @@ class Controller extends ExController
             return view('dashboard.regions.update', compact('region'));
         }
 
-        $this->dispatchNow(UpdateJob::fromRequest($region, $request));
+        $this->dispatchSync(UpdateJob::fromRequest($region, $request));
         $this->info(trans('admin.messages.updated'));
         return redirect()->route('dashboard.regions');
     }
@@ -67,7 +67,7 @@ class Controller extends ExController
             return view('dashboard.regions.store');
         }
 
-        $this->dispatchNow(StoreJob::fromRequest($request));
+        $this->dispatchSync(StoreJob::fromRequest($request));
         $this->info(trans('admin.messages.created'));
         return redirect()->route('dashboard.regions');
     }

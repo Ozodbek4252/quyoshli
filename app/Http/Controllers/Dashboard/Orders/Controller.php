@@ -211,9 +211,9 @@ class Controller extends ExController
 
         //$address = Address::find($order->address_id);
 
-        $this->dispatchNow(UpdateJob::fromRequest($order, $request));
-        //$this->dispatchNow(AddressUpdateJob::fromRequest($address, $request));
-        $this->dispatchNow(new ProductsUpdateJob($order, $request));
+        $this->dispatchSync(UpdateJob::fromRequest($order, $request));
+        //$this->dispatchSync(AddressUpdateJob::fromRequest($address, $request));
+        $this->dispatchSync(new ProductsUpdateJob($order, $request));
 
         $this->info(trans('admin.messages.updated'));
 
