@@ -80,6 +80,7 @@ return [
         'title' => 'Пользователи',
         'fio' => 'Ф.И.О',
         'username' => 'Логин',
+        'password' => 'Пароль',
         'phone' => 'Телефон',
         'ip' => 'IP',
         'first_name' => 'Имя',

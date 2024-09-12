@@ -80,6 +80,7 @@ return [
         'title' => 'Foydalanuvchilar',
         'fio' => 'To`liq ism',
         'username' => 'Login',
+        'password' => 'Parol',
         'phone' => 'Telefon',
         'ip' => 'IP',
         'first_name' => 'Ism',
