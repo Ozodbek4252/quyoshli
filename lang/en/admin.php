@@ -5,7 +5,10 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'actions' => 'Actions',
+    'cancel' => 'Cancel',
     'are_you_sure' => 'Are you sure you want to delete',
+    'are_you_sure_block' => 'Are you sure you want to block',
+    'are_you_sure_block_raz' => 'Are you sure you want to unblock',
     'add' => 'Add',
     'more' => 'More',
     'save' => 'Save',
@@ -16,6 +19,18 @@ return [
     'no_publish' => 'Not published',
     'back' => 'Back',
     'all_fields_with' => 'All fields marked with * are required',
+    'preview' => 'Preview',
+
+    'permissions' => [
+        'view' => 'Can view',
+        'print' => 'Can print',
+        'create' => 'Can add',
+        'update' => 'Can edit',
+        'delete' => 'Can delete',
+        'delivery' => 'Can edit delivery',
+        'status' => 'Can edit status :status',
+        'filter' => 'Give access to filter'
+    ],
 
     'settings' => [
         'title' => 'Settings',
@@ -51,6 +66,10 @@ return [
         ]
     ],
 
+    'delivery' => [
+        'title' => 'Delivery'
+    ],
+
     'colors' => [
         'title' => 'Colors',
         'name' => 'Name',
@@ -60,11 +79,14 @@ return [
     'users' => [
         'title' => 'Users',
         'fio' => 'Full name',
+        'username' => 'Login',
         'phone' => 'Phone',
         'ip' => 'IP',
         'first_name' => 'First name',
         'last_name' => 'Last name',
         'role' => 'Role',
+        'date_reg' => 'Registration date',
+        'date_online' => 'Last online',
     ],
 
     'staffs' => [
@@ -84,7 +106,11 @@ return [
         'publish' => 'Publish',
         'search' => 'ID or Name',
         'brands' => 'Brands',
+        'brand' => 'Brand',
         'characteristics' => 'Characteristics',
+        'delete_mass' => 'Delete mass',
+        'status-active' => 'Activate',
+        'deactivate' => 'Deactivate',
     ],
 
     'compilations' => [
@@ -99,6 +125,7 @@ return [
         'status' => 'Status',
         'delivery_type' => 'Delivery type',
         'payment_system' => 'Payment system',
+        'transaction' => 'Transaction',
         'date' => 'Date',
         'order' => 'Order',
         'order_number' => 'Order number №:number',
@@ -115,6 +142,7 @@ return [
         'price' => 'Price',
         'total' => 'Total',
         'color' => 'Color',
+        'article_number' => 'Article number',
         'delivery' => 'Delivery',
         'branch' => 'Branch',
         'shipment_date' => 'Shipment date',
@@ -131,6 +159,13 @@ return [
         'waiting' => 'Waiting',
         'refused' => 'Refused',
         'date' => 'Date',
+    ],
+
+    'logs' => [
+        'title' => 'Logs',
+        'user' => 'User',
+        'action' => 'Action',
+        'section' => 'Section'
     ],
 
     'posts' => [
@@ -185,6 +220,8 @@ return [
         'link' => 'Link',
         'image' => 'Image',
         'position' => 'Position',
+        'type' => 'Type',
+        'lang' => 'Language',
         'placement' => [
             'title' => 'Placement',
             'choose' => 'Choose placement',
@@ -218,6 +255,8 @@ return [
         'created' => 'Successfully created',
         'deleted' => 'Successfully deleted',
         'uploaded' => 'File successfully uploaded',
+        'published' => 'Published',
+        'success' => 'The action was completed successfully.',
     ],
 
     'pages' => [
@@ -248,6 +287,7 @@ return [
         'status' => 'Status',
         'published' => 'Published',
         'not_published' => 'Not published',
+        'publish' => 'Publish'
     ],
 
     'regions' => [
@@ -260,4 +300,15 @@ return [
         'name' => 'Name',
         'choose_region' => 'Choose region'
     ],
+
+    'currency' => [
+        'title' => 'Currency exchange rate',
+        'dollar' => 'Dollar',
+        'euro' => 'Euro',
+        'created_at' => 'Created'
+    ],
+
+    'notification_available' => [
+        'title' => 'Notification of availability',
+    ]
 ];
