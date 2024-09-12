@@ -22,7 +22,9 @@ class Brand extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'image', 'slug'
+        'name',
+        'image',
+        'slug'
     ];
 
     /**
@@ -36,7 +38,7 @@ class Brand extends Model
     protected static $logName = 'brand';
     protected static $logAttributes = ['name'];
     protected static $submitEmptyLogs = false;
-
+    protected static $logOnlyDirty = true;
 
     /**
      * @return int
@@ -71,5 +73,3 @@ class Brand extends Model
         return $this->belongsToMany(Category::class, 'categories_brands');
     }
 }
-
-

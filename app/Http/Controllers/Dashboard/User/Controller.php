@@ -15,7 +15,6 @@ use App\Http\Requests\Dashboard\User\Update as UpdateRequest;
 
 use App\Jobs\Dashboard\User\Update as UpdateJob;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 
 class Controller extends ExController
@@ -39,19 +38,15 @@ class Controller extends ExController
      */
     public function index(Request $request)
     {
-//        return $request->all();
         $this->authorize('view', 'users');
         $users = $this->users->latest('id')
-                    ->steped();
+            ->steped();
 
         if (!is_null($request->date_from)) {
             $users = $users->filterByDate($request->date_from, $request->date_to, $request->sort_type);
         }
 
-//        return $users->get();
         $users = $users->search($request->search_id, $request->search_phone, $request->search_ip)->paginate(30);
-
-//        return $users;
 
         return view('dashboard.users.index', compact('users'));
     }
@@ -62,7 +57,7 @@ class Controller extends ExController
 
         $staffs = Staff::with('role')
             ->oldest('id')
-            ->where('role_id', '!=' ,2)
+            ->where('role_id', '!=', 2)
             ->paginate(30);
 
         return view('dashboard.users.staffs', compact('staffs'));
@@ -79,7 +74,6 @@ class Controller extends ExController
 
         if ($staff->block === true) {
             $staff->block = false;
-
         } else {
             $staff->block = true;
         }
@@ -149,15 +143,13 @@ class Controller extends ExController
                     ]);
                 }
             }
-
         }
     }
 
     public function export(Request $request)
     {
-//        return $request;
         return (new UsersExport($request->date_from, $request->date_to, $request->search_id, $request->search_phone, $request->search_ip, $request->sort_type))
-            ->download("users_".now()->toDateString().".xlsx");
+            ->download("users_" . now()->toDateString() . ".xlsx");
     }
 
     public static function addHours()

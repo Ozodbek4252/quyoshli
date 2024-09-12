@@ -40,7 +40,7 @@ class Update extends FormRequest
         return (int) $this->get('role_id');
     }
 
-    public function getPassword()
+    public function getPassword(): string
     {
         return (string) $this->get('password');
     }

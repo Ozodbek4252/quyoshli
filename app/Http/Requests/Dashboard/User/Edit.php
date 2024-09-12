@@ -13,7 +13,7 @@ class Edit extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         if ($this->isMethod('get')) {
             return [];

@@ -15,10 +15,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-//    public function send(SmppServiceInterface $smpp)
-//    {
-//        dd($smpp->sendOne(998946404476, 'test sherali kachok'));
-//    }
+    //    public function send(SmppServiceInterface $smpp)
+    //    {
+    //        dd($smpp->sendOne(998946404476, 'test sherali kachok'));
+    //    }
 
     protected function info(string $text)
     {
