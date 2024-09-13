@@ -35,18 +35,12 @@ class Store
         $category->position = $request->getPosition();
         $category->image = $request->getImage();
         $category->parent_id = $request->getParentId();
-        $category->popular = $request->getPopular();
         $category->published = $request->getPublished();
         $category->credit = $request->getCredit();
-        $category->descriptions = $request->descriptions;
         $category->keywords = $request->keywords;
         $category->title_seo = $request->title_seo;
 
         $category->save();
-
-//        $brands = collect($request->brands)->map(function ($brand) {
-//            return $brand->id;
-//        });
 
         $category->brands()->sync($request->brands, false);
 

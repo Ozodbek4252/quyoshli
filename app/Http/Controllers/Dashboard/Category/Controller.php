@@ -16,7 +16,6 @@ use Illuminate\Http\Request;
 
 class Controller extends ExController
 {
-
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
@@ -24,7 +23,6 @@ class Controller extends ExController
     public function index()
     {
         $this->authorize('view', 'categories');
-//        $categories = Category::latest()->paginate(20);
         $categories = Category::select('id', 'name->ru as category', 'position', 'parent_id')
             ->where('parent_id', null)
             ->with(['children' => function ($parent) {
@@ -33,10 +31,8 @@ class Controller extends ExController
                 }]);
             }])->orderBy('position', 'asc')->get();
 
-//        return $categories;
         return view('dashboard.category.index', compact('categories'));
     }
-
 
     /**
      * @param StoreRequest $request
@@ -57,7 +53,6 @@ class Controller extends ExController
             return view('dashboard.category.store', compact('brands', 'parent_categories'));
         }
 
-
         $category = $this->dispatchSync(new StoreJob($request));
 
         if (!empty($request->char)) {
@@ -76,8 +71,6 @@ class Controller extends ExController
         return response()->json([
             'status' => true
         ]);
-
-        //return redirect()->route('dashboard.categories');
     }
 
     /**
@@ -194,7 +187,6 @@ class Controller extends ExController
                             $cccc->save();
                         }
                     }
-
                 }
             }
         }
@@ -221,7 +213,6 @@ class Controller extends ExController
 
         return $cats;
     }
-
 
     /**
      * @param $categories
@@ -265,7 +256,6 @@ class Controller extends ExController
 
                             ];
                         }
-
                     } else {
                         $arr[] = [
                             'id' => $parent['id'],
@@ -284,10 +274,8 @@ class Controller extends ExController
                 ];
                 return $arr;
             }
-
         }, $categories);
     }
-
 
     /**
      * @return string

@@ -23,7 +23,6 @@ class Request extends FormRequest
             'name.*' => 'required|string',
             'image' => 'nullable|mimes:jpg,jpeg,png',
             'parent_id' => 'nullable',
-            'popular' => 'nullable',
             'brands' => 'nullable|array',
             'position' => 'nullable|numeric'
         ];
