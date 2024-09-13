@@ -214,9 +214,6 @@
                                         </div>
                                     </div>
 
-
-
-
                                     <div class="col-12">
                                         <div class="form-label-group position-relative has-icon-left">
                                             <input type="text" id="telegram" required
@@ -331,7 +328,6 @@
                                         </div>
                                     </div>
 
-
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-md-6 float-left">
@@ -349,268 +345,9 @@
                                                     <label for="label-description">@lang('admin.settings.description') UZ *</label>
                                                 </fieldset>
                                             </div>
-
-                                            <div class="col-6">
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="on_credit"
-                                                            @if ($setting->on_credit == 1) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">в кредит</span>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-
-                                            <div class="col-6">
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="buy_one"
-                                                            @if ($setting->buy_one == 1) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Купить в один клик</span>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-
-                                            <div class="col-12 mt-2">
-                                                <h3>Управления блоками</h3>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[news]"
-                                                            @if ($setting->permissions['news'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Блок новости</span>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[middle_banner]"
-                                                            @if ($setting->permissions['middle_banner'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Баннеры середине</span>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[special_block]"
-                                                            @if ($setting->permissions['special_block'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Специальные предложения</span>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[popular_categories]"
-                                                            @if ($setting->permissions['popular_categories'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Популярная категория</span>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[brands]"
-                                                            @if ($setting->permissions['brands'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Бренды</span>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[lider_products]"
-                                                            @if ($setting->permissions['lider_products'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Лидеры продаж</span>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[popular_products]"
-                                                            @if ($setting->permissions['popular_products'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Популярный продукты</span>
-                                                    </div>
-                                                </fieldset>
-
-                                                <fieldset>
-                                                    <div class="vs-checkbox-con vs-checkbox-primary">
-                                                        <input type="checkbox" name="permissions[new_products]"
-                                                            @if ($setting->permissions['new_products'] == true) checked @endif
-                                                            value="1">
-                                                        <span class="vs-checkbox">
-                                                            <span class="vs-checkbox--check">
-                                                                <i class="vs-icon feather icon-check"></i>
-                                                            </span>
-                                                        </span>
-
-                                                        <span class="">Новинки</span>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-
-
                                         </div>
                                     </div>
-
-                                    <div class="col-12 mt-2">
-                                        <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="links1" required
-                                                class="form-control @error('links.one') is-invalid @enderror"
-                                                value="{{ old('links.1', !empty($setting->links['one']) ? $setting->links['one'] : '') }}"
-                                                name="links[one]" placeholder="Ссылка на: Рассрочка онлайн за 1 минуту">
-                                            <div class="form-control-position">
-                                                <i class="fa fa-link"></i>
-                                            </div>
-                                            <label for="links1">Ссылка на: Рассрочка онлайн за 1 минуту *</label>
-
-                                            @error('links.one')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="links2" required
-                                                class="form-control @error('links.two') is-invalid @enderror"
-                                                value="{{ old('links.two', !empty($setting->links['two']) ? $setting->links['two'] : '') }}"
-                                                name="links[two]" placeholder="Ссылка на: Самовывоз через 15 минут">
-                                            <div class="form-control-position">
-                                                <i class="fa fa-link"></i>
-                                            </div>
-                                            <label for="links2">Ссылка на: Самовывоз через 15 минут *</label>
-
-                                            @error('links.two')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="links3" required
-                                                class="form-control @error('links.three') is-invalid @enderror"
-                                                value="{{ old('links.three', !empty($setting->links['three']) ? $setting->links['three'] : '') }}"
-                                                name="links[three]" placeholder="Ссылка на: Гарантия низкой цены">
-                                            <div class="form-control-position">
-                                                <i class="fa fa-link"></i>
-                                            </div>
-                                            <label for="links3">Ссылка на: Гарантия низкой цены *</label>
-
-                                            @error('links.three')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="links4" required
-                                                class="form-control @error('links.4') is-invalid @enderror"
-                                                value="{{ old('links.four', !empty($setting->links['four']) ? $setting->links['four'] : '') }}"
-                                                name="links[four]" placeholder="Ссылка на: Бонусная программа Quyoshli">
-                                            <div class="form-control-position">
-                                                <i class="fa fa-link"></i>
-                                            </div>
-                                            <label for="links4">Ссылка на: Бонусная программа Alistore *</label>
-
-                                            @error('links.four')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <div class="form-label-group position-relative has-icon-left">
-                                            <input type="text" id="links5" required
-                                                class="form-control @error('links.5') is-invalid @enderror"
-                                                value="{{ old('links.five', !empty($setting->links['five']) ? $setting->links['five'] : '') }}"
-                                                name="links[five]" placeholder="Ссылка на: Быстрая и бережная доставка">
-                                            <div class="form-control-position">
-                                                <i class="fa fa-link"></i>
-                                            </div>
-                                            <label for="links5">Ссылка на: Быстрая и бережная доставка *</label>
-
-                                            @error('links.five')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-
-
                                 </div>
-
                             </div>
                         </div>
 
@@ -634,7 +371,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
