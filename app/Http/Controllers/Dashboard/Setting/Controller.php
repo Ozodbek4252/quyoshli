@@ -48,7 +48,7 @@ class Controller extends ExController
 
     public function delivery(Request $request)
     {
-//        $this->authorize('delivery', 'settings');
+        // $this->authorize('delivery', 'settings');
         Gate::check('update', 'settings');
         $setting = $this->setting;
 
@@ -64,12 +64,11 @@ class Controller extends ExController
             'pickup' => $pickup,
             'delivery' => $delivery,
             'day_delivery' => $request->day_delivery,
-            'pickup_text' => $request->pickup_text,
-            'other' => $request->other
+            'pickup_text' => '',
+            'other' => ''
         ]);
 
         $this->info(trans('admin.messages.updated'));
         return redirect()->back();
-
     }
 }
