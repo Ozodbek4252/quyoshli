@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.slider.title'). ' - ')
+@section('title', trans('admin.slider.title') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -13,8 +13,6 @@
                             <li class="breadcrumb-item active">
                                 @lang('admin.slider.title')
                             </li>
-                            {{--                            <li class="breadcrumb-item active">Fixed Layout--}}
-                            {{--                            </li>--}}
                         </ol>
                     </div>
                 </div>
@@ -35,78 +33,15 @@
         <div class="col-12">
 
             <div class="card">
-
                 <div class="card-content">
                     <div id="app">
                         <slider-view :sliders-data="{{ $sliders }}" :role="{{ auth()->user()->role }}"></slider-view>
                     </div>
-{{--                    <div class="card-body">--}}
-{{--                        <div class="card-title">--}}
-{{--                            hello--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="table-responsive">--}}
-{{--                        <table class="table mb-0">--}}
-{{--                            <thead class="thead-dark">--}}
-{{--                            <tr>--}}
-{{--                                <th scope="col" width="50">ID</th>--}}
-{{--                                <th scope="col" width="50">@lang('admin.slider.image')</th>--}}
-{{--                                <th scope="col">@lang('admin.slider.name')</th>--}}
-{{--                                <th scope="col">@lang('admin.slider.type')</th>--}}
-{{--                                <th scope="col">@lang('admin.slider.lang')</th>--}}
-{{--                                <th scope="col">@lang('admin.slider.placement.title')</th>--}}
-{{--                                <th scope="col" class="text-right">@lang('admin.actions')</th>--}}
-{{--                            </tr>--}}
-{{--                            </thead>--}}
-{{--                            <tbody>--}}
-{{--                            @if(count($sliders) == 0)--}}
-{{--                                <tr>--}}
-{{--                                    <td class="text-center" colspan="4">--}}
-{{--                                        @lang('admin.no_data')--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                            @endif--}}
-{{--                            @foreach($sliders as $slider)--}}
-{{--                                <tr>--}}
-{{--                                    <th scope="row">--}}
-{{--                                        {{ $slider->id }}--}}
-{{--                                    </th>--}}
-{{--                                    <td>--}}
-{{--                                        <img src="/{{ $slider->getImage() }}" width="100%" alt="">--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        @if(!$slider->published)--}}
-{{--                                            <i class="fa fa-info-circle text-danger" data-toggle="tooltip" data-original-title="@lang('admin.no_publish')"></i>--}}
-{{--                                        @endif--}}
-{{--                                        {{ $slider->name }}--}}
-{{--                                    </td>--}}
-{{--                                    <td>{{ $slider->type }}</td>--}}
-{{--                                    <td>{{ $slider->language }}</td>--}}
-{{--                                    <td>@lang("admin.slider.placement.$slider->placement")</td>--}}
-{{--                                    <td class="text-right">--}}
-{{--                                        @can('update', 'sliders')--}}
-{{--                                            <a href="{{ route('dashboard.slider.update', [$slider->id]) }}" class="btn btn-sm btn-success btn-icon" data-toggle="tooltip" data-original-title="@lang('admin.edit')">--}}
-{{--                                                <i class="feather icon-edit"></i>--}}
-{{--                                            </a>--}}
-{{--                                        @endcan--}}
-
-{{--                                        @can('delete', 'sliders')--}}
-{{--                                            <a href="{{ route('dashboard.slider.delete', $slider->id) }}" class="btn btn-sm btn-danger btn-icon" data-toggle="tooltip" data-original-title="@lang('admin.delete')">--}}
-{{--                                                <i class="feather icon-trash"></i>--}}
-{{--                                            </a>--}}
-{{--                                        @endcan--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                            @endforeach--}}
-
-{{--                            </tbody>--}}
-{{--                        </table>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+                </div>
+            </div>
         </div>
     </div>
 @endsection
 @push('js')
-    <script src="{{ mix('js/app.js') }}"></script>
+    @vite('resources/js/app.js')</script>
 @endpush

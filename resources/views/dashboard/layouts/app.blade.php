@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="admin template, Vuesax admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>@yield('title')Alistore</title>
+    <title>@yield('title')Quyoshli</title>
     <link rel="apple-touch-icon" href="/vendor/dashboard/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="/vendor/dashboard/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -53,7 +53,7 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto"><a class="navbar-brand">
                         <div class="brand-logo"></div>
-                        <h2 class="brand-text mb-0">Alistore</h2>
+                        <h2 class="brand-text mb-0">Quyoshli</h2>
                     </a></li>
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
                             class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i
@@ -248,7 +248,6 @@
                                     </a>
                                     <ul class="menu-content">
                                         @foreach ($pages = App\Models\Page::all() as $page)
-
                                             <li class="{{ request()->is("dashboard/pages/update/$page->id*") ? 'active' : '' }}">
                                                 <a href="{{ route('dashboard.pages.update', $page->id) }}">
                                                     <i class="feather icon-circle"></i>

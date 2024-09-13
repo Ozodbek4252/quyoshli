@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.edit'). ' - ')
+@section('title', trans('admin.edit') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -32,9 +32,8 @@
 @endsection
 
 @push('css')
-
 @endpush
 
 @push('js')
-    <script src="{{ mix('js/app.js') }}"></script>
+    @vite('resources/js/app.js')</script>
 @endpush

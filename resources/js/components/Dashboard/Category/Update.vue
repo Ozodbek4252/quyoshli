@@ -160,7 +160,7 @@
                                         </button>
 
 
-                                        <div class="controls mt-1" v-if="">
+                                        <div class="controls mt-1">
                                             <button id="add_cat" type="button" class="btn btn-outline-primary w-100">
                                                 {{ $t('admin.categories.add_cat') }}
                                             </button>

@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.add'). ' - ')
+@section('title', trans('admin.add') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -27,29 +27,31 @@
 
 @section('content')
     <div id="app">
-        <product-add :brands="{{json_encode($brands) }}" :categories="{{ json_encode($categories) }}" :colors="{{ json_encode($colors) }}" :back-url="{{ json_encode($_SERVER['HTTP_REFERER']) }}"></product-add>
+        <product-add :brands="{{ json_encode($brands) }}" :categories="{{ json_encode($categories) }}"
+            :colors="{{ json_encode($colors) }}" :back-url="{{ json_encode($_SERVER['HTTP_REFERER']) }}"></product-add>
     </div>
 @endsection
 
 @push('css')
-
 @endpush
 
 @push('js')
-    <script src="{{ mix('js/app.js') }}"></script>
+    {{--  @vite('resources/js/app.js')</script>  --}}
+    @vite('resources/js/app.js')
+
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $("#image_cat").hide();
             $("#remove_img").hide();
             $("#add_img").show();
 
-            $("#add_img").click(function(){
+            $("#add_img").click(function() {
                 $("#image_cat").show();
                 $("#remove_img").show();
                 $("#add_img").hide();
             });
-            $("#remove_img").click(function(){
+            $("#remove_img").click(function() {
                 $("#image_cat").hide();
                 $("#remove_img").hide();
                 $("#add_img").show();
@@ -58,14 +60,16 @@
     </script>
 
     <script type="text/javascript">
-
         function PreviewImage() {
             var oFReader = new FileReader();
             oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
 
-            oFReader.onload = function (oFREvent) {
+            oFReader.onload = function(oFREvent) {
                 document.getElementById("uploadPreview").src = oFREvent.target.result;
             };
         };
     </script>
+
+    @vite('resources/js/app.js')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-file-agent@latest/dist/vue-file-agent.css" />
 @endpush

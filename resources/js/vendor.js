@@ -10,7 +10,9 @@ import VueSocialSharing from 'vue-social-sharing'
 import VueCookie from 'vue-cookie';
 
 
-window.axios = require('axios');
+// New way (ES Modules)
+import axios from 'axios';
+window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

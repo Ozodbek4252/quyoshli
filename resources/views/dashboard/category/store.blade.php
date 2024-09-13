@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.add'). ' - ')
+@section('title', trans('admin.add') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -31,30 +31,29 @@
 
 @section('content')
     <div id="app">
-        <category-store :brands-data="{{ $brands }}" :categories-data="{{ $parent_categories }}" ></category-store>
+        <category-store :brands-data="{{ $brands }}" :categories-data="{{ $parent_categories }}"></category-store>
     </div>
 
 @endsection
 
 @push('js')
-
-    <script src="{{ mix('js/app.js') }}"></script>
+    @vite('resources/js/app.js')</script>
 
     <script src="/vendor/dashboard/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <script src="/vendor/dashboard/app-assets/js/scripts/forms/select/form-select2.js"></script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $("#sub_cat").hide();
             $("#remove_cat").hide();
             $("#add_cat").show();
 
-            $("#add_cat").click(function(){
+            $("#add_cat").click(function() {
                 $("#sub_cat").show();
                 $("#remove_cat").show();
                 $("#add_cat").hide();
             });
-            $("#remove_cat").click(function(){
+            $("#remove_cat").click(function() {
                 $("#sub_cat").hide();
                 $("#remove_cat").hide();
                 $("#add_cat").show();
@@ -63,17 +62,17 @@
     </script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $("#image_cat").hide();
             $("#remove_img").hide();
             $("#add_img").show();
 
-            $("#add_img").click(function(){
+            $("#add_img").click(function() {
                 $("#image_cat").show();
                 $("#remove_img").show();
                 $("#add_img").hide();
             });
-            $("#remove_img").click(function(){
+            $("#remove_img").click(function() {
                 $("#image_cat").hide();
                 $("#remove_img").hide();
                 $("#add_img").show();
@@ -82,17 +81,13 @@
     </script>
 
     <script type="text/javascript">
-
         function PreviewImage() {
             var oFReader = new FileReader();
             oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
 
-            oFReader.onload = function (oFREvent) {
+            oFReader.onload = function(oFREvent) {
                 document.getElementById("uploadPreview").src = oFREvent.target.result;
             };
         };
     </script>
-
-
-
 @endpush

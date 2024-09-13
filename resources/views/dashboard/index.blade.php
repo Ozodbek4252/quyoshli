@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.home'). ' - ')
+@section('title', trans('admin.home') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -8,8 +8,7 @@
                     <h2 class="content-header-title float-left mb-0">@lang('admin.home')</h2>
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item active"><a
-                                    href="{{ route('dashboard') }}">@lang('admin.home')</a>
+                            <li class="breadcrumb-item active"><a href="{{ route('dashboard') }}">@lang('admin.home')</a>
                             </li>
                         </ol>
                     </div>
@@ -63,9 +62,9 @@
                             <i class="feather icon-shopping-cart text-danger font-medium-5"></i>
                         </div>
                     </div>
-{{--                    <h2 class="text-bold-700 mt-1">{{ $orders }}</h2>--}}
-{{--                    <p class="mt-1 mb-0">Заказы - <b>{{ $orders }}</b></p>--}}
-{{--                    <p class="mb-0">Рассрочка - <b>{{ $credit }}</b></p>--}}
+                    {{--                    <h2 class="text-bold-700 mt-1">{{ $orders }}</h2> --}}
+                    {{--                    <p class="mt-1 mb-0">Заказы - <b>{{ $orders }}</b></p> --}}
+                    {{--                    <p class="mb-0">Рассрочка - <b>{{ $credit }}</b></p> --}}
                     <div class="row" style="width: 100%">
                         <div class="col-6">
                             <h2 class="text-bold-700 mt-1">{{ $orders }}</h2>
@@ -106,7 +105,8 @@
 @push('css')
 @endpush
 @push('js')
-    <script src="{{ mix('js/app.js') }}">
+    {{--  @vite('resources/js/app.js')  --}}
+    @vite('resources/js/app.js')
 
     </script>
 @endpush

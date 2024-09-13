@@ -139,7 +139,7 @@
 
 
 
-                                            <div class="controls mt-1" v-if="">
+                                            <div class="controls mt-1">
                                                 <button id="add_cat" type="button" class="btn btn-outline-primary w-100">{{ $t('admin.categories.add_cat') }}</button>
                                                 <button id="remove_cat" type="button" class="btn btn-secondary w-100">{{ $t('admin.categories.remove_cat') }}</button>
 
@@ -463,6 +463,9 @@
         }
     }
 </script>
+
+
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
 <style scoped>
 

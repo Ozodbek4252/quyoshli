@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.specialOffers.title'). ' - ')
+@section('title', trans('admin.specialOffers.title') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -13,8 +13,8 @@
                             <li class="breadcrumb-item active">
                                 @lang('admin.specialOffers.title')
                             </li>
-                            {{--                            <li class="breadcrumb-item active">Fixed Layout--}}
-                            {{--                            </li>--}}
+                            {{--                            <li class="breadcrumb-item active">Fixed Layout --}}
+                            {{--                            </li> --}}
                         </ol>
                     </div>
                 </div>
@@ -40,45 +40,49 @@
                     <div class="table-responsive">
                         <table class="table mb-0">
                             <thead class="thead-dark">
-                            <tr>
-                                <th scope="col" width="50">ID</th>
-                                <th scope="col" width="50">@lang('admin.specialOffers.image')</th>
-                                <th scope="col">@lang('admin.specialOffers.name')</th>
-                                <th scope="col">@lang('admin.specialOffers.description')</th>
-                                <th scope="col" class="text-right">@lang('admin.actions')</th>
-                            </tr>
+                                <tr>
+                                    <th scope="col" width="50">ID</th>
+                                    <th scope="col" width="50">@lang('admin.specialOffers.image')</th>
+                                    <th scope="col">@lang('admin.specialOffers.name')</th>
+                                    <th scope="col">@lang('admin.specialOffers.description')</th>
+                                    <th scope="col" class="text-right">@lang('admin.actions')</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @if(count($specialOffers) == 0)
-                                <tr>
-                                    <td class="text-center" colspan="4">
-                                        @lang('admin.no_data')
-                                    </td>
-                                </tr>
-                            @endif
-                            @foreach($specialOffers as $specialOffer)
-                                <tr>
-                                    <th scope="row">{{ $specialOffer->id }}</th>
-                                    <td>
-                                        <img src="/{{ $specialOffer->getImage() }}" width="100%" alt="">
-                                    </td>
-                                    <td>{{ $specialOffer->getName() }}</td>
-                                    <td>{{ $specialOffer->getDescription() }}</td>
-                                    <td class="text-right">
-                                        @can('update', 'special-offers')
-                                            <a href="{{ route('dashboard.specialOffers.update', [$specialOffer->id]) }}" class="btn btn-sm btn-success btn-icon" data-toggle="tooltip" data-original-title="@lang('admin.edit')">
-                                                <i class="feather icon-edit"></i>
-                                            </a>
-                                        @endcan
+                                @if (count($specialOffers) == 0)
+                                    <tr>
+                                        <td class="text-center" colspan="4">
+                                            @lang('admin.no_data')
+                                        </td>
+                                    </tr>
+                                @endif
+                                @foreach ($specialOffers as $specialOffer)
+                                    <tr>
+                                        <th scope="row">{{ $specialOffer->id }}</th>
+                                        <td>
+                                            <img src="{{ $specialOffer->getImage() }}" width="100%" alt="">
+                                        </td>
+                                        <td>{{ $specialOffer->getName() }}</td>
+                                        <td>{{ $specialOffer->getDescription() }}</td>
+                                        <td class="text-right">
+                                            @can('update', 'special-offers')
+                                                <a href="{{ route('dashboard.specialOffers.update', [$specialOffer->id]) }}"
+                                                    class="btn btn-sm btn-success btn-icon" data-toggle="tooltip"
+                                                    data-original-title="@lang('admin.edit')">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>
+                                            @endcan
 
-                                        @can('delete', 'special-offers')
-                                            <a href="{{ route('dashboard.specialOffers.delete', $specialOffer->id) }}" class="btn btn-sm btn-danger btn-icon" data-toggle="tooltip" data-original-title="@lang('admin.delete')">
-                                                <i class="feather icon-trash"></i>
-                                            </a>
-                                        @endcan
-                                    </td>
-                                </tr>
-                            @endforeach
+                                            @can('delete', 'special-offers')
+                                                <a href="{{ route('dashboard.specialOffers.delete', $specialOffer->id) }}"
+                                                    class="btn btn-sm btn-danger btn-icon" data-toggle="tooltip"
+                                                    data-original-title="@lang('admin.delete')">
+                                                    <i class="feather icon-trash"></i>
+                                                </a>
+                                            @endcan
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                             </tbody>
                         </table>

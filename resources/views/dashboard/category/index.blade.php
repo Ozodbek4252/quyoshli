@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.categories.title'). ' - ')
+@section('title', trans('admin.categories.title') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -13,8 +13,8 @@
                             <li class="breadcrumb-item active">
                                 @lang('admin.categories.title')
                             </li>
-                            {{--                            <li class="breadcrumb-item active">Fixed Layout--}}
-                            {{--                            </li>--}}
+                            {{--                            <li class="breadcrumb-item active">Fixed Layout --}}
+                            {{--                            </li> --}}
                         </ol>
                     </div>
                 </div>
@@ -38,12 +38,12 @@
                 <category-list :categories-data="{{ $categories }}"></category-list>
             </div>
 
-{{--        <div class="row">--}}
-{{--            <div class="cats-table">--}}
+            {{--        <div class="row"> --}}
+            {{--            <div class="cats-table"> --}}
 
-{{--            </div>--}}
-{{--            <div onclick="save();" class="cats-save">Save</div>--}}
-{{--        </div>--}}
+            {{--            </div> --}}
+            {{--            <div onclick="save();" class="cats-save">Save</div> --}}
+            {{--        </div> --}}
 
         </div>
     </div>
@@ -51,7 +51,6 @@
 
 @push('css')
     <style type="text/css" media="screen">
-
         .tree-node-inner {
             background: #fff;
             -webkit-box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, .15);
@@ -60,7 +59,7 @@
             cursor: grabbing;
         }
 
-        .cats_no_sub{
+        .cats_no_sub {
             width: 100%;
             background: #f3f3f3;
             border-radius: 5px;
@@ -69,23 +68,24 @@
             float: left;
             margin: 5px 0;
         }
-        .cat_name{
+
+        .cat_name {
             float: left;
-            width:50%;
+            width: 50%;
         }
 
-        .cat_right{
+        .cat_right {
             float: right;
             width: 100%;
             text-align: right;
         }
 
-        .cat-buttons{
+        .cat-buttons {
             float: right;
             margin: -2px 24px 0 0px;
         }
 
-        .cats_sub{
+        .cats_sub {
             width: 97%;
             background: #f3f3f3;
             border-radius: 5px;
@@ -96,19 +96,19 @@
         }
     </style>
 
-<link rel="stylesheet" href="/vendor/catman/style.css">
+    <link rel="stylesheet" href="/vendor/catman/style.css">
 @endpush
 
 @push('js')
-{{--    <script type="text/javascript" src="/dashboard/categories/json"></script>--}}
-{{--    <script src="/vendor/catman/catman.js"></script>--}}
+    {{--    <script type="text/javascript" src="/dashboard/categories/json"></script> --}}
+    {{--    <script src="/vendor/catman/catman.js"></script> --}}
 
-<script src="{{ mix('js/app.js') }}"></script>
+    {{--  <script src="{{ vite('js/app.js') }}"></script>  --}}
+    @vite(['resources/js/app.js'])
 
     <script>
-            $(document).ready(function () {
-                    // load();
-                });
-        </script>
+        $(document).ready(function() {
+            // load();
+        });
+    </script>
 @endpush
-

@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.add'). ' - ')
+@section('title', trans('admin.add') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -67,8 +67,7 @@
         }
 
         td,
-        th {
-        }
+        th {}
 
         th {
             background-color: #f7f7f7;
@@ -92,24 +91,24 @@
 @endpush
 @section('content')
     <div class="card position-relative">
-        <div class="card-content" >
+        <div class="card-content">
             <div id="parent">
                 <div>
                     <table class="table mb-0">
                         <thead class="thead-dark" id="myhead">
                             <tr>
-                            <th scope="col">№</th>
-                            <th scope="col">Названия RU *</th>
-                            <th scope="col">Названия RU *</th>
-                            <th scope="col">Бренд *</th>
-                            <th scope="col">Цена *</th>
-                            <th scope="col">Цена со скидкой</th>
-                            <th scope="col">Артикул *</th>
-                            <th scope="col">Сканер отпечатков пальцев (1,0)</th>
-                            <th scope="col">Размер диагонали</th>
-                            <th scope="col">Количество SIM-карт</th>
-                            <th scope="col">Слот для карты памяти (1,0)</th>
-                        </tr>
+                                <th scope="col">№</th>
+                                <th scope="col">Названия RU *</th>
+                                <th scope="col">Названия RU *</th>
+                                <th scope="col">Бренд *</th>
+                                <th scope="col">Цена *</th>
+                                <th scope="col">Цена со скидкой</th>
+                                <th scope="col">Артикул *</th>
+                                <th scope="col">Сканер отпечатков пальцев (1,0)</th>
+                                <th scope="col">Размер диагонали</th>
+                                <th scope="col">Количество SIM-карт</th>
+                                <th scope="col">Слот для карты памяти (1,0)</th>
+                            </tr>
                         </thead>
                         <tbody id="mybody" onscroll="fixscroll()">
                             <tr>
@@ -157,15 +156,11 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 @endsection
 
-
-
 @push('js')
-
     <script>
         function fixscroll() {
             var thead = document.getElementById("myhead");
@@ -174,7 +169,5 @@
             //document.getElementById("frozen").scrollLeft = 0;
         }
     </script>
-    <script src="{{ mix('js/app.js') }}"></script>
-
-
+    @vite('resources/js/app.js')</script>
 @endpush
