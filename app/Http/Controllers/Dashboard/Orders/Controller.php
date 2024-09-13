@@ -79,7 +79,7 @@ class Controller extends ExController
             $statuses[] = 'in_way';
         }
 
-        if (!empty(auth()->user()->role->permissions['order_status']['closed']) || !empty(auth()->user()->role->permissions['order_status']['cancelled']) || !empty(auth()->user()->role->permissions['order_status']['replacement']) ) {
+        if (!empty(auth()->user()->role->permissions['order_status']['closed']) || !empty(auth()->user()->role->permissions['order_status']['cancelled']) || !empty(auth()->user()->role->permissions['order_status']['replacement'])) {
             $statuses[] = 'closed';
         }
 
@@ -110,7 +110,7 @@ class Controller extends ExController
         $this->authorize('view', 'orders');
         $products = $this->order_products->where('order_id', $order->id)->get();
         //total = $this->order_products->getTotalPrice($order->id);
-//        $comments = OrdersComment::
+        //        $comments = OrdersComment::
         $logs = Activity::orderBy('id', 'asc')->where('subject_type', 'App\Models\Order')->where('subject_id', $order->id)->get();
 
         $setting = Setting::find(1);
@@ -124,9 +124,9 @@ class Controller extends ExController
     public function invoice_print(Order $order)
     {
         return view('invoice', compact('order'));
-//        $path = public_path().'/pdf';
-//        $pdf = PDF::loadView('invoice');
-//        return $pdf->download('medium.pdf');
+        //        $path = public_path().'/pdf';
+        //        $pdf = PDF::loadView('invoice');
+        //        return $pdf->download('medium.pdf');
     }
 
     /**
@@ -200,8 +200,7 @@ class Controller extends ExController
                 'branch:id,name'
             ]);
 
-
-            foreach($order->products as $product) {
+            foreach ($order->products as $product) {
                 $product->product->price = $product->product->getPrice();
                 $product->price_discount = $product->product->price_discount == null ? null : $product->product->getDiscountPrice();
             }
@@ -237,8 +236,19 @@ class Controller extends ExController
         ]);
 
         $product->makeHidden([
-            'body', 'name', 'brand_id', 'child_id', 'slug', 'published', 'updated_at', 'created_at', 'deleted_at',
-            'poster', 'poster_thumb', 'price', 'price_discount'
+            'body',
+            'name',
+            'brand_id',
+            'child_id',
+            'slug',
+            'published',
+            'updated_at',
+            'created_at',
+            'deleted_at',
+            'poster',
+            'poster_thumb',
+            'price',
+            'price_discount'
         ]);
 
         return response()->json([
@@ -255,7 +265,7 @@ class Controller extends ExController
     {
         $query = $request->name;
 
-        $product = $this->products->where('name->ru', 'like', '%'.$query . '%')->isAvailable()->get()->map(function ($product) {
+        $product = $this->products->where('name->ru', 'like', '%' . $query . '%')->isAvailable()->get()->map(function ($product) {
             return [
                 'id' => $product->id,
                 'poster' => '/' . $product->poster,
@@ -277,13 +287,13 @@ class Controller extends ExController
     public function product_info(Product $product)
     {
         $this->authorize('view', 'orders');
-//        if ($product->currency == 'dollar') {
-//            $product->price = round($product->price * $this->currency->dollar, -3);
-//            $product->price_discount = $product->price_discount == null ? null : round($product->price_discount * $this->currency->dollar, -3);
-//        } else {
-//            $product->price = round($product->price * $this->currency->euro, -3);
-//            $product->price_discount = $product->price_discount == null ? null : round($product->price_discount * $this->currency->euro, -3);
-//        }
+        //        if ($product->currency == 'dollar') {
+        //            $product->price = round($product->price * $this->currency->dollar, -3);
+        //            $product->price_discount = $product->price_discount == null ? null : round($product->price_discount * $this->currency->dollar, -3);
+        //        } else {
+        //            $product->price = round($product->price * $this->currency->euro, -3);
+        //            $product->price_discount = $product->price_discount == null ? null : round($product->price_discount * $this->currency->euro, -3);
+        //        }
 
         $product->price = $product->getPrice();
         $product->price_discount = $product->price_discount == null ? null : $product->getDiscountPrice();
@@ -339,21 +349,20 @@ class Controller extends ExController
                 break;
 
             case 'cancelled':
-//                if (!empty(auth()->user()->role->permissions['order_status']['cancelled'])) {
-//                    $order->status = $status;
-//                    $message = "Alistore vash zakaz: {$order->id} otmenen!";
-//                } else {
-//                    return abort(403, 'Мы от тебя не ждали :(');
-//                }
+                //                if (!empty(auth()->user()->role->permissions['order_status']['cancelled'])) {
+                //                    $order->status = $status;
+                //                    $message = "Alistore vash zakaz: {$order->id} otmenen!";
+                //                } else {
+                //                    return abort(403, 'Мы от тебя не ждали :(');
+                //                }
                 break;
             case 'replacement':
-//                if (!empty(auth()->user()->role->permissions['order_status']['replacement'])) {
-//                    $order->status = $status;
-//                } else {
-//                    return abort(403, 'Мы от тебя не ждали :(');
-//                }
+                //                if (!empty(auth()->user()->role->permissions['order_status']['replacement'])) {
+                //                    $order->status = $status;
+                //                } else {
+                //                    return abort(403, 'Мы от тебя не ждали :(');
+                //                }
                 break;
-
         }
 
         $this->sms->send($order->user->phone, $message);
@@ -373,35 +382,35 @@ class Controller extends ExController
         $from = empty($request->get('from')) ? Carbon::parse('2000-01-01')->format('Y-m-d') : Carbon::parse($request->get('from'))->format('Y-m-d');
         $to = empty($request->get('to')) ? Carbon::parse('2040-01-01')->format('Y-m-d') : Carbon::parse($request->get('to'))->format('Y-m-d');
         $user = empty($request->get('user')) ? null : $request->get('user');
-//        return $request->all();
+        //        return $request->all();
 
         $orders = $this->orders->latest('id')
             ->when($id ?? null, function ($query, $id) {
                 $query->where('id', $id);
             })->when($type_delivery ?? null, function ($query, $type_delivery) {
-                 $query->where('type_delivery', $type_delivery);
+                $query->where('type_delivery', $type_delivery);
             })->when($status ?? null, function ($query, $status) {
-                 $query->where('status', $status);
+                $query->where('status', $status);
             });
 
-            if ($pay_status == 2) {
-                $orders = $orders->when($pay_status ?? null, function ($query, $pay_status) {
-                    $query->where('status', 4);
-                });
-            } else {
-                $orders = $orders->when($pay_status ?? null, function ($query, $pay_status) {
-                    $query->where('payment_status', $pay_status);
-                });
-            }
-
-            $orders = $orders->whereHas('user', function ($query) use ($user) {
-                $query->when($user ?? null, function ($query, $user) {
-                     $phone = str_replace(['(', ')', ' ', '+'], '', $user);
-                     $query->where('phone', $phone);
-                });
+        if ($pay_status == 2) {
+            $orders = $orders->when($pay_status ?? null, function ($query, $pay_status) {
+                $query->where('status', 4);
             });
+        } else {
+            $orders = $orders->when($pay_status ?? null, function ($query, $pay_status) {
+                $query->where('payment_status', $pay_status);
+            });
+        }
 
-            $orders = $orders->whereBetween('created_at', [$from, $to])
+        $orders = $orders->whereHas('user', function ($query) use ($user) {
+            $query->when($user ?? null, function ($query, $user) {
+                $phone = str_replace(['(', ')', ' ', '+'], '', $user);
+                $query->where('phone', $phone);
+            });
+        });
+
+        $orders = $orders->whereBetween('created_at', [$from, $to])
             ->paginate(20);
 
         return view('dashboard.orders.index', compact('orders'));
@@ -411,7 +420,7 @@ class Controller extends ExController
     {
         $order = Order::find($request->order_id);
 
-        switch($request->type) {
+        switch ($request->type) {
             case 'cancelled':
                 if (!empty(auth()->user()->role->permissions['order_status']['cancelled'])) {
                     $order->status = 'cancelled';
@@ -436,7 +445,7 @@ class Controller extends ExController
                 }
                 break;
             case 'closed':
-                if (!empty(auth()->user()->role->permissions['order_status']['closed']) || !empty(auth()->user()->role->permissions['order_status']['cancelled']) || !empty(auth()->user()->role->permissions['order_status']['replacement']) ) {
+                if (!empty(auth()->user()->role->permissions['order_status']['closed']) || !empty(auth()->user()->role->permissions['order_status']['cancelled']) || !empty(auth()->user()->role->permissions['order_status']['replacement'])) {
                     $order->status = 'closed';
 
                     if ($order->payment_type == 'credit') {
@@ -477,7 +486,7 @@ class Controller extends ExController
             $this->sms->send($order->user->phone, $message);
         }
 
-        if($request->type != 'default')
+        if ($request->type != 'default')
             $order->save();
 
         OrdersComment::create([

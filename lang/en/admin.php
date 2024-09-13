@@ -147,7 +147,12 @@ return [
         'delivery' => 'Delivery',
         'branch' => 'Branch',
         'shipment_date' => 'Shipment date',
-        'comment' => 'Comment'
+        'comment' => 'Comment',
+        'Export' => 'Export',
+        'Order archive' => 'Order archive',
+        'Search' => 'Search',
+        'Filter' => 'Filter',
+        'Order ID' => 'Order ID',
     ],
 
     'billing' => [

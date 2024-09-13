@@ -30,10 +30,10 @@
     <link rel="stylesheet" href="{{ asset('vendor/site/libs/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/site/libs/bootstrap/bootstrap.min.css') }}">
     <meta name="google-site-verification" content="WEA5xbVXzXWXn-hHYtz3xfgo0H1Y8OzDAuU9RHPXfv8">
-    {{--  @vite('resources/css/vendor.css')  --}}
-    {{--  <link rel="stylesheet" href="{{ asset('vendor/css/vendor.css') }}">  --}}
+    @vite('resources/css/vendor.css')
+    <link rel="stylesheet" href="{{ asset('vendor/css/vendor.css') }}">
 
-    {{--    <link rel="stylesheet" href="{{ asset('vendor/site/css/main.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('vendor/site/css/main.min.css') }}">
 
     @stack('css')
 </head>
@@ -41,7 +41,7 @@
 <body>
     <div id="app">
         <!-- TopBar -->
-        {{--  <div class="topbar">
+        <div class="topbar">
             <div class="topbar-top">
                 <div class="container">
                     <div class="topbar-top__left">
@@ -155,7 +155,7 @@
                     </button>
                 </div>
             </div>
-        </div>  --}}
+        </div>
 
         <!-- Navbar -->
         <div class="my-navbar">
@@ -178,7 +178,7 @@
 
         <!-- Footer -->
 
-        {{--  <footer class="footer">
+        <footer class="footer">
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
@@ -302,7 +302,7 @@
                     </div>
                 </div>
             </div>
-        </div>  --}}
+        </div>
 
         @guest
             <login></login>
@@ -320,7 +320,10 @@
     <script src="{{ asset('vendor/site/libs/popper/popper.min.js') }}"></script>
     <script src="{{ asset('vendor/site/libs/bootstrap/bootstrap.min.js') }}"></script>
 
-    <script src="{{ mix('js/vendor.js') }}"></script>
+    {{--  <script src="{{ mix('js/vendor.js') }}"></script>  --}}
+
+    {{--  @vite('resources/js/vendor.js')</script>  --}}
+    @vite('resources/js/vendor.js')
 
     <script src="{{ asset('vendor/site/js/main.js') }}"></script>
 
@@ -362,7 +365,8 @@
         });
     </script>
     <noscript>
-        <div><img src="https://mc.yandex.ru/watch/67473268" style="position:absolute; left:-9999px;" alt="" />
+        <div>
+            <img src="https://mc.yandex.ru/watch/67473268" style="position:absolute; left:-9999px;" alt="" />
         </div>
     </noscript>
     <!-- /Yandex.Metrika counter -->

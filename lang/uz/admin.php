@@ -147,7 +147,12 @@ return [
         'delivery' => 'Yetkazib berish',
         'branch' => 'Filial',
         'shipment_date' => 'Olib ketish sanasi',
-        'comment' => 'Izoh'
+        'comment' => 'Izoh',
+        'Export' => 'Eksport',
+        'Order archive' => 'Buyurtma arxivi',
+        'Search' => 'Qidirish',
+        'Filter' => 'Filtr',
+        'Order ID' => 'Buyurtma ID',
     ],
 
     'billing' => [

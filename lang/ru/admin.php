@@ -147,7 +147,12 @@ return [
         'delivery' => 'Доставка',
         'branch' => 'Филиал',
         'shipment_date' => 'Дата самовывоза',
-        'comment' => 'Комментария'
+        'comment' => 'Комментария',
+        'Export' => 'Экспорт',
+        'Order archive' => 'Архив заказов',
+        'Search' => 'Поиск',
+        'Filter' => 'Фильтр',
+        'Order ID' => 'ID заказа',
     ],
 
     'billing' => [

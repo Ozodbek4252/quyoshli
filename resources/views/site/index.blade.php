@@ -5,52 +5,52 @@
 @section('content')
     <features-section :setting-data="{{ $setting }}"></features-section>
 
-
-    @if($setting->permissions['special_block'] == true)
+    @if ($setting->permissions['special_block'] == true)
         <!-- Спецпредложения -->
         <section class="section-special">
             <div class="container">
                 <h2 class="section-title mb-3">@lang('app.index.special_offer')</h2>
 
                 <special-block :offers-data="{{ $offers }}"></special-block>
-
             </div>
         </section>
     @endif
 
-    @if($setting->permissions['lider_products'] == true)
+    @if ($setting->permissions['lider_products'] == true)
         <!-- Лидеры продаж -->
         <section class="section-products">
             <div class="container">
                 <h2 class="section-title">@lang('app.index.leader_of_sales')</h2>
-                <products-slider :products-data="{{ json_encode($liderProducts) }}" :login-info="{{ json_encode(auth()->check()) }}"></products-slider>
+                <products-slider :products-data="{{ json_encode($liderProducts) }}"
+                    :login-info="{{ json_encode(auth()->check()) }}"></products-slider>
             </div>
         </section>
     @endif
 
-    @if($setting->permissions['popular_products'] == true)
+    @if ($setting->permissions['popular_products'] == true)
         <!-- Популярные товары -->
         <section class="section-products">
             <div class="container">
                 <h2 class="section-title">@lang('app.index.popular_prods')</h2>
-                <products-slider :products-data="{{ json_encode($popularProducts) }}" :login-info="{{ json_encode(auth()->check()) }}"></products-slider>
+                <products-slider :products-data="{{ json_encode($popularProducts) }}"
+                    :login-info="{{ json_encode(auth()->check()) }}"></products-slider>
             </div>
         </section>
     @endif
 
-    @if($setting->permissions['middle_banner'] == true)
+    @if ($setting->permissions['middle_banner'] == true)
         <!-- Bonus -->
         <bonus-section :banners-data="{{ $middleSliders }}"></bonus-section>
     @endif
 
-    @if($setting->permissions['popular_categories'] == true)
+    @if ($setting->permissions['popular_categories'] == true)
         <!-- Популярные категории -->
         <section class="section-popular_category">
             <div class="container">
                 <h2 class="section-title">@lang('app.index.popular_categories')</h2>
 
                 <div class="popular_category">
-                    @foreach($popularCategories as $popularCategory)
+                    @foreach ($popularCategories as $popularCategory)
                         <a href="{{ $popularCategory->link }}" class="popular_category--item">
                             <div class="popular_category--item__img">
                                 <img src="{{ asset("/$popularCategory->image") }}" alt="{{ $popularCategory->getName() }}">
@@ -63,22 +63,23 @@
         </section>
     @endif
 
-    @if($setting->permissions['new_products'] == true)
+    @if ($setting->permissions['new_products'] == true)
         <!-- Новинки -->
         <section class="section-products">
             <div class="container">
                 <h2 class="section-title">@lang('app.index.new_income')</h2>
-                <products-slider :products-data="{{ json_encode($newProducts) }}" :login-info="{{ json_encode(auth()->check()) }}"></products-slider>
+                <products-slider :products-data="{{ json_encode($newProducts) }}"
+                    :login-info="{{ json_encode(auth()->check()) }}"></products-slider>
             </div>
         </section>
     @endif
 
-    @if($setting->permissions['news'] == true)
+    @if ($setting->permissions['news'] == true)
         <!-- Новости -->
         <news-section :posts-data="{{ $posts }}" :top-post="{{ $toppedPost }}"></news-section>
     @endif
 
-    @if($setting->permissions['brands'] == true)
+    @if ($setting->permissions['brands'] == true)
         <!-- Наши партнеры -->
         <section class="section-products">
             <div class="container">
