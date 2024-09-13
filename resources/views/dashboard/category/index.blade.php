@@ -13,8 +13,6 @@
                             <li class="breadcrumb-item active">
                                 @lang('admin.categories.title')
                             </li>
-                            {{--                            <li class="breadcrumb-item active">Fixed Layout --}}
-                            {{--                            </li> --}}
                         </ol>
                     </div>
                 </div>
@@ -105,10 +103,4 @@
 
     {{--  <script src="{{ vite('js/app.js') }}"></script>  --}}
     @vite(['resources/js/app.js'])
-
-    <script>
-        $(document).ready(function() {
-            // load();
-        });
-    </script>
 @endpush

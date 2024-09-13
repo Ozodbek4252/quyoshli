@@ -9,4 +9,5 @@ return [
     App\Providers\SettingProvider::class,
     Jenssegers\Agent\AgentServiceProvider::class,
     Maatwebsite\Excel\ExcelServiceProvider::class,
+    Intervention\Image\ImageServiceProvider::class
 ];

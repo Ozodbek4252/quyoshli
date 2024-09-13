@@ -60,7 +60,7 @@
                                     <tr>
                                         <th scope="row">{{ $specialOffer->id }}</th>
                                         <td>
-                                            <img src="{{ $specialOffer->getImage() }}" width="100%" alt="">
+                                            <img src="/{{ $specialOffer->getImage() }}" width="100%" alt="">
                                         </td>
                                         <td>{{ $specialOffer->getName() }}</td>
                                         <td>{{ $specialOffer->getDescription() }}</td>

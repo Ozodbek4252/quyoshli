@@ -23,10 +23,36 @@ use App\Http\Controllers\Dashboard\Notification\Controller as NotificationContro
 use App\Http\Controllers\Dashboard\Log\Controller as LogController;
 use App\Http\Controllers\Dashboard\Setting\Controller as SettingController;
 use App\Http\Controllers\Dashboard\Currency\Controller as CurrencyController;
+use App\Http\Controllers\Site\LocaleController as SiteLocaleController;
+use App\Http\Controllers\Site\PageController as SitePageController;
+use App\Http\Controllers\Site\ProductController as SiteProductController;
+use App\Http\Controllers\Site\FavoriteController as SiteFavoriteController;
+use App\Http\Controllers\Site\MainPageController as SiteMainPageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::middleware('locale')->group(function () {
+    //     Route::get('/', [SiteMainPageController::class, 'index'])->name('site.main.page');
+    //     Route::get('locale/{lang}', [SiteLocaleController::class, 'setLocale'])->name('site.setLocale');
+    //     Route::get('pages/{slug}', [SitePageController::class, 'getPage'])->name('site.default-page');
+    //     Route::get('search', [SiteProductController::class, 'search'])->name('search');
+
+    //     Route::middleware('authProfile')->group(function () {
+    //         Route::get('favorites', [SiteFavoriteController::class, 'index'])->name('favorites');
+    //         Route::get('favorites/store/{product}', [SiteFavoriteController::class, 'store']);
+    //         Route::get('favorites/delete/{product}', [SiteFavoriteController::class, 'delete']);
+    //     });
+
+    Route::prefix('category')->group(function () {
+        Route::get('/', 'CategoryController@all')->name('categories');
+        Route::get('/{category}', 'CategoryController@index')->name('category.view');
+        Route::get('/{category}/{Category}', 'CategoryController@show')->name('category.show');
+        Route::get('/{category}/{slug}/{Category}', 'CategoryController@showCatalog')->name('category.showParent');
+        Route::post('/filter/{category}', 'CategoryController@filter')->name('category.filter');
+    });
 });
 
 // Route::get('/sitemap.xml', 'Site\MainPageController@sitemap')->name('sitemap');

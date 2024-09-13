@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard\Product;
 
-use App\Exports\OrdersExport;
 use App\Exports\ProductsForPriceExport;
 use App\Helpers\MassAction;
 use App\Imports\MobileImport;
 use App\Models\Brand;
 use App\Models\Color;
-use App\Models\Order;
 use App\Models\Preview;
 use App\Models\Screen;
 use App\Models\Category;
@@ -82,20 +80,18 @@ class Controller extends ExController
         if ($request->isMethod('get')) {
             $this->authorize('create', 'products');
             $categories = $this->categories->select('id', 'name->ru as category')
-                    ->where('parent_id', null)
-                    ->with(['parents' => function ($parent) {
-                        return $parent->select('id', 'name->ru as category', 'parent_id')->with(['parents' => function ($parent) {
-                            return $parent->select('id', 'name->ru as category', 'parent_id');
-                        }]);
-                    }])->get();
-
+                ->where('parent_id', null)
+                ->with(['parents' => function ($parent) {
+                    return $parent->select('id', 'name->ru as category', 'parent_id')->with(['parents' => function ($parent) {
+                        return $parent->select('id', 'name->ru as category', 'parent_id');
+                    }]);
+                }])->get();
 
             $brands = $this->brands->get();
             $colors = $this->colors->get();
 
             return view('dashboard.products.store', compact('categories', 'brands', 'colors'));
         }
-
 
         $product = $this->dispatchSync(StoreJob::fromRequest($request));
         $product->categories()->attach([$request->getCategoryID()]);
@@ -127,7 +123,7 @@ class Controller extends ExController
 
             $product->characteristics()->detach($ids);
 
-            for($i = 0; $i < count($char); $i++) {
+            for ($i = 0; $i < count($char); $i++) {
                 if ($char[$i]['value']) {
                     $sync_data[$char[$i]['id']] = ['value' => $char[$i]['value']];
                 }
@@ -146,7 +142,7 @@ class Controller extends ExController
         $category = Category::find($id);
 
 
-        if (!empty($category->characteristics) && count($category->characteristics) > 0 ) {
+        if (!empty($category->characteristics) && count($category->characteristics) > 0) {
             $characteristics = $category->characteristics;
         } else {
             if (!empty($category->parent)) {
@@ -214,7 +210,6 @@ class Controller extends ExController
 
                             ];
                         }
-
                     } else {
                         $arr[] = [
                             'id' => $parent['id'],
@@ -233,7 +228,6 @@ class Controller extends ExController
                 ];
                 return $arr;
             }
-
         }, $categories);
     }
 
@@ -258,7 +252,7 @@ class Controller extends ExController
                         'screens' => function ($screen) {
                             return $screen->select('id', 'name', 'size', 'path', 'product_id', 'type');
                         }
-                ]);
+                    ]);
                 },
                 'categories' => function ($categories) {
                     return $categories->select('id', 'name->ru as category', 'parent_id')->with(['parent' => function ($parent) {
@@ -304,7 +298,7 @@ class Controller extends ExController
         }
 
         $this->dispatchSync(new UpdateJob($product, $request));
-        $child  = $this->dispatchSync(new ChildUpdateJob($request, $product));
+        $this->dispatchSync(new ChildUpdateJob($request, $product));
 
         $this->charSync($product, $request->characteristics);
 
@@ -325,34 +319,34 @@ class Controller extends ExController
     public function delete(Product $product)
     {
         $this->authorize('delete', 'products');
-//        if (is_file($product->poster)) {
-//            unlink($product->poster);
-//        }
-//
-//        if (is_file($product->poster_thumb)) {
-//            unlink($product->poster_thumb);
-//        }
-//
-//        $screens = Screen::where('product_id', $product->id)->get();
-//        foreach ($screens as $screen) {
-//            if (is_file($screen->path)) {
-//                unlink($screen->path);
-//            }
-//
-//            if (is_file($screen->path)) {
-//                unlink($screen->path_thumb);
-//            }
-//
-//            $screen->delete();
-//        }
-//
-//        foreach ($product->childrens as $children) {
-//            $screens = Screen::where('product_id', $children->id)->get();
-//            foreach ($screens as $screen) {
-//                $this->delete_screen($screen);
-//            }
-//            $children->delete();
-//        }
+        //        if (is_file($product->poster)) {
+        //            unlink($product->poster);
+        //        }
+        //
+        //        if (is_file($product->poster_thumb)) {
+        //            unlink($product->poster_thumb);
+        //        }
+        //
+        //        $screens = Screen::where('product_id', $product->id)->get();
+        //        foreach ($screens as $screen) {
+        //            if (is_file($screen->path)) {
+        //                unlink($screen->path);
+        //            }
+        //
+        //            if (is_file($screen->path)) {
+        //                unlink($screen->path_thumb);
+        //            }
+        //
+        //            $screen->delete();
+        //        }
+        //
+        //        foreach ($product->childrens as $children) {
+        //            $screens = Screen::where('product_id', $children->id)->get();
+        //            foreach ($screens as $screen) {
+        //                $this->delete_screen($screen);
+        //            }
+        //            $children->delete();
+        //        }
 
         $product->delete();
         $product->childrens()->delete();
@@ -372,7 +366,7 @@ class Controller extends ExController
         $name = empty($request->get('name')) ? null : $request->get('name');
         $category = empty($request->get('category')) ? null : $request->get('category');
         $in_stock = empty($request->get('in_stock')) && $request->get('in_stock') == 0 ? null : $request->get('in_stock');
-        $published = $request->get('published');// ? null : $request->get('published');
+        $published = $request->get('published'); // ? null : $request->get('published');
         $article_number = empty($request->get('article_number')) ? null : $request->get('article_number');
 
         if ($category) {
@@ -388,7 +382,6 @@ class Controller extends ExController
             if ($in_stock == 1) {
                 $products = $products->where('available', 1)->where('count', '>', 0);
             }
-
         } else {
             $products = Product::latest('id')->searchFilter($id, $brand, $category, $published, $article_number, $category_id, $name);
 
@@ -448,7 +441,7 @@ class Controller extends ExController
 
 
         if ($request->category_id == 0) {
-            foreach($excel as $item) {
+            foreach ($excel as $item) {
                 $product = Product::find($item[0]);
                 if (!empty($product)) {
                     $product->article_number = $item[1];
@@ -504,7 +497,6 @@ class Controller extends ExController
         $category_id = $request->category_id;
 
         return view('dashboard.products.preview', compact('products', 'characteristics', 'category_id'));
-
     }
 
     /**
@@ -567,7 +559,7 @@ class Controller extends ExController
 
                 $product->characteristics()->detach($ids);
 
-                for($i = 0; $i < count($row['characteristics']); $i++) {
+                for ($i = 0; $i < count($row['characteristics']); $i++) {
                     if ($char[$i]['type'] == 'checkbox') {
                         $value = $row['characteristics'][$i] == 1 || $row['characteristics'][$i] == true ? 'true' : 'false';
                     } else {

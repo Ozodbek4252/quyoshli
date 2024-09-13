@@ -35,6 +35,7 @@
 
 @push('css')
     <link href="/vendor/fileinput/css/fileinput.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-file-agent@latest/dist/vue-file-agent.css" />
 @endpush
 
 @push('js')

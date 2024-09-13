@@ -78,7 +78,8 @@ class Product extends Model
 
 
     protected $hidden = [
-        'child_id', 'deleted_at'
+        'child_id',
+        'deleted_at'
     ];
 
     protected static $logName = 'products';
@@ -186,13 +187,13 @@ class Product extends Model
      */
     public function getPoster(): string
     {
+        // dd(public_path($this->poster));
         if (is_file(public_path($this->poster))) {
             return $this->poster;
         }
 
         return '/images/no_product.jpg';
     }
-
 
     /**
      * @return float
@@ -213,8 +214,8 @@ class Product extends Model
 
         return abs($credit);
 
-//        $credit = $price * 37 / 100 + $price;
-//        return $credit / 12;
+        //        $credit = $price * 37 / 100 + $price;
+        //        return $credit / 12;
     }
 
     /**
@@ -276,7 +277,7 @@ class Product extends Model
      */
     public function screen()
     {
-        return $this->belongsTo(Screen::class,'id', 'product_id');
+        return $this->belongsTo(Screen::class, 'id', 'product_id');
     }
 
     /**
@@ -301,7 +302,7 @@ class Product extends Model
         $now = date_create(Carbon::now()->format('Y-m-d'));
         $diff = date_diff($original_date, $now);
 
-        if ($diff->format("%a") <= 10 ) {
+        if ($diff->format("%a") <= 10) {
             return true;
         }
 
@@ -534,7 +535,7 @@ class Product extends Model
         $now = date_create(Carbon::now()->format('Y-m-d'));
         $diff = date_diff($original_date, $now);
 
-        if ($diff->format("%a") <= 10 ) {
+        if ($diff->format("%a") <= 10) {
             return true;
         }
 
@@ -555,13 +556,13 @@ class Product extends Model
     public function scopeSearchFilter($query, $id, $brand, $category, $published, $article_number, $category_id, $name)
     {
         return $query->when($id ?? null, function ($query, $id) {
-                $query->where('id', $id);
-            })
-//            ->whereHas('brand', function ($query) use ($brand) {
-//                $query->when($brand ?? null, function ($q, $brand) {
-//                    $q->where('name->ru', 'like', '%'.$brand.'%');
-//                });
-//            })
+            $query->where('id', $id);
+        })
+            //            ->whereHas('brand', function ($query) use ($brand) {
+            //                $query->when($brand ?? null, function ($q, $brand) {
+            //                    $q->where('name->ru', 'like', '%'.$brand.'%');
+            //                });
+            //            })
             ->whereHas('categories', function ($query) use ($category, $category_id) {
                 $query->when($category ?? null, function ($query, $category) use ($category_id) {
                     $query->whereIn('id', $category_id);
@@ -573,7 +574,7 @@ class Product extends Model
                     $query->where('published', true);
                 }
             })->when($name ?? null, function ($query, $name) {
-                $query->where('name->ru', 'ilike', '%'.$name.'%');
+                $query->where('name->ru', 'ilike', '%' . $name . '%');
             })->when($article_number ?? null, function ($query, $article_number) {
                 $query->where('article_number', $article_number);
             })->notChilds();

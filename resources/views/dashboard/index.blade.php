@@ -19,7 +19,6 @@
 @endsection
 @section('content')
     <div class="row">
-
         <div class="col-lg-3 col-sm-6 col-12">
             <div class="card">
                 <div class="card-header d-flex flex-column align-items-start pb-0">
@@ -100,13 +99,5 @@
     <div id="app">
         <dashboard-statics :statics="{{ json_encode($statics) }}"></dashboard-statics>
     </div>
-
 @endsection
-@push('css')
-@endpush
-@push('js')
-    {{--  @vite('resources/js/app.js')  --}}
-    @vite('resources/js/app.js')
-
-    </script>
-@endpush
+@vite('resources/js/app.js')

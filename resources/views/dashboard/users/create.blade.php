@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', trans('admin.add'). ' - ')
+@section('title', trans('admin.add') . ' - ')
 @section('speedbar')
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -26,7 +26,8 @@
 @endsection
 
 @push('css')
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/dashboard/app-assets/vendors/css/forms/select/select2.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('vendor/dashboard/app-assets/vendors/css/forms/select/select2.min.css') }}">
 @endpush
 
 @section('content')
@@ -48,12 +49,14 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="first-name-vertical">@lang('admin.users.username') *</label>
-                                                    <input type="text" id="first-name-vertical" class="form-control @error('username') is-invalid @enderror"
-                                                           name="username" required value="{{ old('username') }}" placeholder="@lang('admin.users.username')">
+                                                    <input type="text" id="first-name-vertical"
+                                                        class="form-control @error('username') is-invalid @enderror"
+                                                        name="username" required value="{{ old('username') }}"
+                                                        placeholder="@lang('admin.users.username')">
                                                     @error('username')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -65,16 +68,16 @@
                                             <label for="role_id">@lang('admin.users.role') *</label>
                                             <select class="select2 form-control" name="role_id" required>
                                                 <option disabled>Выберите роль</option>
-                                                @foreach($roles as $role)
+                                                @foreach ($roles as $role)
                                                     <option value="{{ $role->id }}">{{ $role->name }}</option>
                                                 @endforeach
-{{--                                                <option value="3">@lang('admin.roles.3')</option>--}}
+                                                {{--                                                <option value="3">@lang('admin.roles.3')</option> --}}
                                             </select>
 
                                             @error('role_id')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </div>
@@ -82,12 +85,13 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="phone">@lang('admin.users.password') *</label>
-                                            <input type="password" id="password" class="form-control @error('password') is-invalid @enderror"
-                                                   name="password" required placeholder="@lang('admin.users.password')">
+                                            <input type="password" id="password"
+                                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                                required placeholder="@lang('admin.users.password')">
                                             @error('password')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
                                             @enderror
                                         </div>
                                     </div>
@@ -98,13 +102,15 @@
                             <div class="col-12 mb-0">
                                 <div class="row">
                                     <div class="col-3">
-                                        <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light btn-icon">
+                                        <button type="submit"
+                                            class="btn btn-primary mr-1 mb-1 waves-effect waves-light btn-icon">
                                             <i class="feather icon-save"></i> @lang('admin.save')
                                         </button>
                                     </div>
 
                                     <div class="col-9">
-                                        <a href="{{ route('dashboard.staffs') }}" class="btn btn-danger mr-1 mb-1 waves-effect waves-light btn-icon pull-right">
+                                        <a href="{{ route('dashboard.staffs') }}"
+                                            class="btn btn-danger mr-1 mb-1 waves-effect waves-light btn-icon pull-right">
                                             <i class="feather icon-x-circle"></i> @lang('admin.cancel')
                                         </a>
                                     </div>

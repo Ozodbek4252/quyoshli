@@ -1,11 +1,9 @@
 <?php
 
-
 namespace App\Api;
 
 use Carbon\Carbon;
 use Intervention\Image\Facades\Image as Imagee;
-use File;
 
 class ImageResize
 {
@@ -17,7 +15,10 @@ class ImageResize
     {
         $folder = Carbon::now()->format('Y/m/d');
         $path = "uploads/{$type}/thumbs/{$folder}";
-        File::makeDirectory(public_path() . "/{$path}", $mode = 0777, true, true);
+
+        if (!file_exists($path)) {
+            mkdir($path, 0755, true);
+        }
 
         return $path;
     }
@@ -34,7 +35,7 @@ class ImageResize
         $folder = $this->mkdir($type);
         $path_thumb = "{$folder}/{$name}";
 
-        $img = Imagee::make($path);
+        $img = Imagee::make(public_path($path));
         $img->resize($size, null, function ($constraint) {
             $constraint->aspectRatio();
         });

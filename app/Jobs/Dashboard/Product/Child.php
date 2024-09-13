@@ -6,18 +6,13 @@ use App\Models\Product;
 use App\Models\Screen;
 use Carbon\Carbon;
 use App\Api\ImageResize;
-
 use App\Http\Requests\Dashboard\Product\Store as StoreRequest;
-use Illuminate\Support\Facades\Log;
-
 
 class Child
 {
-
     protected $request;
     protected $image;
     protected $product;
-
 
     /**
      * Child constructor.
@@ -42,8 +37,6 @@ class Child
             $color_id = $color['color_id'] == "null" ? null : $color['color_id'];
             $sizes = !empty($color['sizes']) ? $color['sizes'] : null;
 
-
-
             $child = Product::create([
                 'color_id' => $color_id,
                 'sizes' => $sizes,
@@ -53,7 +46,7 @@ class Child
                 'available' => true
             ]);
 
-            if(!empty($color['screens'])) {
+            if (!empty($color['screens'])) {
                 foreach ($color['screens'] as $screen) {
                     $folder = Carbon::now()->format('Y/m/d');
                     $path = $screen['image']->store("uploads/screens/{$folder}");
@@ -69,7 +62,6 @@ class Child
                     $this->image->resize($image->path, 322, 'screens');
                 }
             }
-
         }
     }
 }

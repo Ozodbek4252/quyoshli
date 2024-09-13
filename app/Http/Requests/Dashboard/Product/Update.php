@@ -41,19 +41,19 @@ class Update extends FormRequest
 
             'popular' => 'nullable',
             'leader_of_sales' => 'nullable',
-            'article_number' => 'required|unique:products,article_number,'.$this->product->id.',id,deleted_at,NULL'
+            'article_number' => 'required|unique:products,article_number,' . $this->product->id . ',id,deleted_at,NULL'
         ];
     }
 
-    protected function getValidatorInstance() {
+    protected function getValidatorInstance()
+    {
         $validator = parent::getValidatorInstance();
 
         if ($this->isMethod('post')) {
 
-            $validator->sometimes('price', 'gt:price_discount', function($input) {
+            $validator->sometimes('price', 'gt:price_discount', function ($input) {
                 return $input->price_discount > 0;
             });
-
         }
 
         return $validator;
@@ -211,6 +211,4 @@ class Update extends FormRequest
     {
         return $this->get('leader_of_sales');
     }
-
-
 }
