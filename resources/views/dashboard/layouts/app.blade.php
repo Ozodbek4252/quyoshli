@@ -266,8 +266,8 @@
                                 {{--            @endif --}}
                             @endcan
 
-                            @can('view', 'feedback')
-                                {{--            @if (auth()->user()->isModerator() || auth()->user()->isAdmin()) --}}
+                            {{--  @can('view', 'feedback')
+                                          @if (auth()->user()->isModerator() || auth()->user()->isAdmin())
                                 <li class=" nav-item {{ request()->is('dashboard/feedback*') ? 'active' : '' }}">
                                     <a href="{{ route('dashboard.feedback.index') }}">
                                         <i class="feather icon-message-circle"></i><span class="menu-title">@lang('admin.feedback.title')
@@ -275,9 +275,9 @@
                                                 class="badge badge-pill badge-primary">{{ App\Models\Feedback::where('viewed', false)->count() }}</span></span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan  --}}
 
-                            @can('view', 'comments')
+                            {{--  @can('view', 'comments')
                                 <li class=" nav-item {{ request()->is('dashboard/comments*') ? 'active' : '' }}">
                                     <a href="{{ route('dashboard.comments') }}">
                                         <i class="feather icon-message-square"></i><span class="menu-title">@lang('admin.comments.title')
@@ -285,7 +285,7 @@
                                                 class="badge badge-pill badge-primary">{{ App\Models\Comment::where('publish', false)->count() }}</span></span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan  --}}
 
                             @can('view', 'billings')
                                 {{--            @if (auth()->user()->isAdmin()) --}}
@@ -356,7 +356,7 @@
 
 
 
-                            <li
+                            {{--  <li
                                 class="nav-item {{ active([route('dashboard.notification_available'), route('dashboard.notification_available') . '/*']) }}">
                                 <a href="{{ route('dashboard.notification_available') }}">
                                     <i class="fa fa-bell"></i>
@@ -364,7 +364,7 @@
                                         @lang('admin.notification_available.title')
                                     </span>
                                 </a>
-                            </li>
+                            </li>  --}}
 
                             @can('view', 'logs')
                                 <li class="nav-item {{ active([route('dashboard.logs'), route('dashboard.logs') . '/*']) }}">
